@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "pxt-core": "13.2.17",
-    "pxt-microbit": "^9.1.2",
+    "pxt-microbit": "9.1.2",
     "typescript": "5.9.3"
   }
 }
