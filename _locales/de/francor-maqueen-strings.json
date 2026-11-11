@@ -1,0 +1,10 @@
+{
+  "francorLidar|block": "LiDAR",
+  "francorMaqueen|block": "Maqueen",
+  "{id:category}FrancorLidar": "LiDAR",
+  "{id:category}FrancorMaqueen": "Maqueen",
+  "{id:group}Lights": "Lichter",
+  "{id:group}Line": "Linie",
+  "{id:group}V2": "V2",
+  "{id:group}V3": "V3"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "francor-maqueen",
+    "version": "0.1.0",
+    "description": "MakeCode extension for DFRobot Maqueen Plus V3/V2 and Matrix LiDAR (EN/DE) by FRANCOR e. V.",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "microphone": "*"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "_locales/de/francor-maqueen-strings.json",
+        "_locales/de/francor-maqueen-jsdoc-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
