@@ -44,11 +44,13 @@ namespace francorLidar {
                 const cmd = pins.i2cReadNumber(ADDR, NumberFormat.UInt8BE, false)
                 if (expectCmd >= 0 && cmd != expectCmd) return null
                 const lenBuf = pins.i2cReadBuffer(ADDR, 2, false)
+                if (lenBuf.length != 2) return null
                 const len = lenBuf.getUint8(0) | (lenBuf.getUint8(1) << 8)
                 if (len > 32) return null
                 const out: number[] = []
                 if (len > 0) {
                     const data = pins.i2cReadBuffer(ADDR, len, false)
+                    if (data.length != len) return null
                     for (let i = 0; i < len; i++) out.push(data.getUint8(i))
                 }
                 return out
@@ -68,9 +70,11 @@ namespace francorLidar {
     }
 
     function sendAvoidDistance(): void {
+        // Clear the flag first: a setAvoidDistance during the request sets it again.
         const mm = pendingAvoidMm
-        if (request(CMD_AVOID_DIST, [(mm >> 8) & 0xFF, mm & 0xFF], -1) != null) {
-            avoidDirty = false
+        avoidDirty = false
+        if (request(CMD_AVOID_DIST, [(mm >> 8) & 0xFF, mm & 0xFF], -1) == null) {
+            avoidDirty = true
         }
     }
 
