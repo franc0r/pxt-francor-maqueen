@@ -1,5 +1,13 @@
 {
   "francorLidar": "Blöcke für den DFRobot Matrix-LiDAR-Abstandssensor.",
+  "francorLidar.direction": "Die Richtung, in der der Sensor am Hindernis vorbei rät. \"frei\", solange es keine Messung gibt.",
+  "francorLidar.distance": "Abstand zum nächsten Hindernis in mm. In den ersten Sekunden nach \"LiDAR einschalten\" und ohne Sensor ist der Wert 9999.",
+  "francorLidar.distance|param|side": "welche Seite",
+  "francorLidar.isDirection": "Eine Richtung zum Vergleichen mit \"Ausweichrichtung\".",
+  "francorLidar.isDirection|param|d": "die Richtung",
+  "francorLidar.setAvoidDistance": "Ab diesem Abstand rät der Sensor eine Richtung (100 bis 500 mm). Am Maqueen höchstens 200, sonst sieht der Sensor den Boden.",
+  "francorLidar.setAvoidDistance|param|mm": "Abstand in mm",
+  "francorLidar.start": "Schaltet den LiDAR ein. Kehrt sofort zurück, der Sensor wird im Hintergrund abgefragt. In den ersten Sekunden und ohne Sensor ist der Abstand 9999.",
   "francorMaqueen": "Blöcke für den DFRobot Maqueen Plus V3/V2.",
   "francorMaqueen.ambientLight": "Helligkeit der Umgebungslicht-Sensoren. Bei beiden Seiten kommt der Mittelwert.",
   "francorMaqueen.ambientLight|param|side": "welcher Sensor",

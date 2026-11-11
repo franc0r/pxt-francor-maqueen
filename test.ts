@@ -36,3 +36,12 @@ francorMaqueen.pidStop()
 let wheelCmPerS = francorMaqueen.wheelSpeed(francorMaqueen.Side.Left)
 let lightRight = francorMaqueen.ambientLight(francorMaqueen.Side.Right)
 let fwVersion = francorMaqueen.version()
+
+// LiDAR compile test: works without start() (returns NO_VALUE, never hangs).
+if (francorLidar.distance(francorLidar.LidarSide.Front) < 200) {
+    francorMaqueen.stop()
+}
+francorLidar.start()
+francorLidar.setAvoidDistance(200)
+if (francorLidar.direction() == francorLidar.isDirection(francorLidar.AvoidDir.Left)) {
+}

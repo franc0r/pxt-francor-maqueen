@@ -1,4 +1,13 @@
 {
+  "francorLidar": "Blocks for the DFRobot Matrix LiDAR distance sensor.",
+  "francorLidar.direction": "The direction the sensor suggests to pass an obstacle. \"free\" without a measurement.",
+  "francorLidar.distance": "Distance to the nearest obstacle in mm.\nIn the first seconds after \"start LiDAR\" and without a sensor the value is 9999.",
+  "francorLidar.distance|param|side": "which side",
+  "francorLidar.isDirection": "A direction, to compare with \"avoid direction\".",
+  "francorLidar.isDirection|param|d": "the direction",
+  "francorLidar.setAvoidDistance": "Distance at which the sensor starts to suggest a direction (100 to 500 mm).\nOn the Maqueen use 200 at most, otherwise the sensor sees the floor.",
+  "francorLidar.setAvoidDistance|param|mm": "distance in mm",
+  "francorLidar.start": "Switches the LiDAR on. Returns immediately; the sensor is polled in the background.\nIn the first seconds and without a sensor, \"distance\" is 9999.",
   "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
   "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith both sides, gives the average.",
   "francorMaqueen.ambientLight|param|side": "which sensor",
