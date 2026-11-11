@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "description": "MakeCode extension for DFRobot Maqueen Plus V3/V2 and Matrix LiDAR (EN/DE) by FRANCOR e. V.",
     "license": "MIT",
+    "public": true,
     "dependencies": {
         "core": "*",
         "microphone": "*"

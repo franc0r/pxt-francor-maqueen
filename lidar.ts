@@ -102,6 +102,7 @@ namespace francorLidar {
     /**
      * Switches the LiDAR on. Returns immediately; the sensor is polled in the background.
      * In the first seconds and without a sensor, "distance" is 9999.
+     * The sensor must be set to I2C address 0x33 (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like "no sensor".
      */
     //% blockId=francor_lidar_start block="start LiDAR"
     //% weight=100
@@ -164,6 +165,7 @@ namespace francorLidar {
     //% mm.min=100 mm.max=500 mm.defl=200
     //% weight=70
     export function setAvoidDistance(mm: number): void {
+        if (!(mm >= 0)) return
         mm = Math.max(100, Math.min(500, Math.round(mm)))
         pendingAvoidMm = mm
         avoidDirty = true

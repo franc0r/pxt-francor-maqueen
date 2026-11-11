@@ -34,7 +34,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 
 - [ ] Verfolgung an (A, Tempo 1): Roboter folgt der Linie. → Ja.
 - [ ] Verfolgung aus (B): Roboter bleibt stehen, Display zeigt die Zahl der Kreuzungen. → Ja.
-- [ ] Tempo 5 (Logo-Taste, dann A): deutlich schneller. Hält er die Linie? → Ja / bis Stufe ____
+- [ ] Tempo 5: A drücken, dann während der Fahrt Logo berühren: deutlich schneller. Hält er die Linie? → Ja / bis Stufe ____
 - [ ] Regel `an Kreuzung`: geradeaus / links / rechts / halt, jeweils ausprobiert. → Er tut, was dasteht.
 - [ ] Regel `an T-Kreuzung`: links / rechts / halt. → Ja.
 - [ ] Regel `an Abzweig links`: geradeaus / links / halt. → Ja.
@@ -42,7 +42,8 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] `erkannte Kreuzung`: Roboter mit Verfolgung aus über eine Kreuzung schieben, Logo-Taste drücken und loslassen: Die Zahl muss passen. 1 = Kreuzung, 2 = T, 3 = Abzweig links, 4 = Abzweig rechts, 0 = keine. Am T geht außerdem der Punkt oben links an. → Ja.
 - [ ] `wenn Kreuzung Nummer 1 erreicht` läuft genau einmal je Kreuzung (keine Doppelzählung). → Ja.
 - [ ] Zähler: B zeigt die Anzahl gezählter Kreuzungen. → Stimmt mit der Fahrt überein.
-- [ ] Nach Verfolgung aus (B) und wieder an (A): Regeln gelten neu (Standard), `setze Kreuzungszähler zurück` zählt von 0. → Ja.
+- [ ] Nach Verfolgung aus (B) und wieder an: Regeln gelten neu (Standard). Das geht nur mit einer Variante von A ohne die vier Regelzeilen (`an Kreuzung` … `an Abzweig rechts`) und ohne `patrolSpeed`: Dazu in `03-platine-kreuzungen.ts` die Zeilen unter „Variante“ nutzen (A+B). → Standardregeln gelten. `setze Kreuzungszähler zurück` zählt von 0. → Ja.
+- [ ] Kreuzungszähler bleibt richtig, während ein Programm in `dauerhaft` die Linienlage liest (parallele I2C-Zugriffe): Roboter mit Verfolgung an (A) über mehrere Kreuzungen fahren lassen; im Programm läuft dazu die `dauerhaft`-Schleife unten (zeigt die Linienlage als Punkt in der Anzeige). B zeigt die Zahl: Sie stimmt mit der Fahrt überein, keine verpassten oder doppelten Kreuzungen. → Ja.
 
 ## 04 Lichter (`04-lichter.ts`)
 
@@ -51,7 +52,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] Helligkeit 20 ist merklich dunkler als 255. → Ja.
 - [ ] A+B: Scheinwerfer links/rechts in allen Farben (rot, grün, gelb, blau, lila, cyan, weiß), dann aus. → Farben stimmen, links und rechts nicht vertauscht.
 - [ ] Logo: alles aus. → Ja.
-- [ ] Lichter ohne `starte Maqueen` (Block allein ins Programm): gehen an (V3-Pin P1). → Ja.
+- [ ] Lichter ohne `starte Maqueen`: Zuerst die Zeile `francorMaqueen.start()` in `04-lichter.ts` löschen, dann flashen. Die Lichter gehen an (V3-Pin P1). → Ja.
 
 ## 05 PID-Fahrt (`05-pid.ts`, Platz frei)
 
@@ -65,6 +66,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 
 ## 06 LiDAR (`06-lidar.ts`)
 
+- [ ] Der Sensor ist auf I2C-Adresse 0x33 gestellt (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“. → Ja.
 - [ ] Ohne `LiDAR einschalten`: A zeigt 9999. → Ja.
 - [ ] B (einschalten): A direkt danach zeigt noch 9999; nach ca. 3 s echte Werte. → Ja.
 - [ ] Hand vor den Sensor (ca. 10 cm): vorne < 200, Logo-Taste zeigt das Herz. → Ja.

@@ -38,8 +38,19 @@ namespace francorMaqueen {
     }
 
     // Write register address, then read n bytes (no repeated start).
+    // Serialized: other fibers (crossing loop, PID wait, user code) must not interleave
+    // between the index write and the read.
+    let i2cBusy = false
     export function readReg(reg: number, n: number): Buffer {
-        pins.i2cWriteNumber(ADDR, reg, NumberFormat.UInt8BE)
-        return pins.i2cReadBuffer(ADDR, n)
+        while (i2cBusy) basic.pause(0)
+        i2cBusy = true
+        let res: Buffer = null
+        try {
+            pins.i2cWriteNumber(ADDR, reg, NumberFormat.UInt8BE)
+            res = pins.i2cReadBuffer(ADDR, n)
+        } finally {
+            i2cBusy = false
+        }
+        return res
     }
 }

@@ -1,5 +1,5 @@
 // Gerätetest 3: Linienverfolgung und Kreuzungen auf der Platine.
-// A = Verfolgung an (Tempo 1), B = aus. Logo-Taste drücken: Tempo 5, loslassen: Kreuzungsart zeigen.
+// A = Verfolgung an (Tempo 1), B = aus. Während der Fahrt Logo berühren: Tempo 5, loslassen: Kreuzungsart zeigen.
 // Regeln stehen unten; ändere sie je Durchgang (geradeaus / links / rechts / halt).
 francorMaqueen.start()
 francorMaqueen.resetCrossings()
@@ -38,3 +38,13 @@ basic.forever(function () {
         led.unplot(0, 0)
     }
 })
+// Test "Kreuzungszähler bei parallelem Lesen": Diese Schleife liest ständig die Linienlage
+// (zweiter I2C-Leser neben der Kreuzungsschleife). Zählung muss trotzdem stimmen.
+basic.forever(function () {
+    basic.clearScreen()
+    led.plot(Math.constrain(Math.round(2 - francorMaqueen.linePosition()), 0, 4), 4)
+    basic.pause(5)
+})
+// Variante für "Regeln gelten neu (Standard)": In Knopf A die vier Regelzeilen
+// (atCrossroad ... atRightOrStraight) und patrolSpeed(1) weglassen, nur
+// resetCrossings() und patrol(On) behalten. Dann gelten nach jedem "an" die Standardregeln.

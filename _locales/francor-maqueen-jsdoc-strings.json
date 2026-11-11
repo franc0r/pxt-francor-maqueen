@@ -7,7 +7,7 @@
   "francorLidar.isDirection|param|d": "the direction",
   "francorLidar.setAvoidDistance": "Distance at which the sensor starts to suggest a direction (100 to 500 mm).\nOn the Maqueen use 200 at most, otherwise the sensor sees the floor.",
   "francorLidar.setAvoidDistance|param|mm": "distance in mm",
-  "francorLidar.start": "Switches the LiDAR on. Returns immediately; the sensor is polled in the background.\nIn the first seconds and without a sensor, \"distance\" is 9999.",
+  "francorLidar.start": "Switches the LiDAR on. Returns immediately; the sensor is polled in the background.\nIn the first seconds and without a sensor, \"distance\" is 9999.\nThe sensor must be set to I2C address 0x33 (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like \"no sensor\".",
   "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
   "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith both sides, gives the average.",
   "francorMaqueen.ambientLight|param|side": "which sensor",

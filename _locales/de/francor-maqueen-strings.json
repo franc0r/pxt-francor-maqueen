@@ -86,7 +86,7 @@
   "francorMaqueen.onCrossing|block": "wenn Kreuzung Nummer $nr erreicht",
   "francorMaqueen.patrolSpeed|block": "Linien-Tempo %level",
   "francorMaqueen.patrol|block": "Linienverfolgung %on",
-  "francorMaqueen.pidStop|block": "stoppe Fahrbefehl",
+  "francorMaqueen.pidStop|block": "stoppe Fahrt",
   "francorMaqueen.redLed|block": "rote LED %side %on",
   "francorMaqueen.resetCrossings|block": "setze Kreuzungszähler zurück",
   "francorMaqueen.rgb|block": "rot %r grün %g blau %b",

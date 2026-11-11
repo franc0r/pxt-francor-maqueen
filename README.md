@@ -26,6 +26,7 @@ Two categories appear: **Maqueen** and **LiDAR**. Everything is plain TypeScript
 ### Error values
 
 - `line position` gives **100** when no sensor sees the line. In calculations such as `40 - 20 * line position` this is a huge value; the motor blocks limit it to -100…100.
+- The LiDAR must be set to I2C address **0x33** (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like "no sensor".
 - `distance … (mm)` gives **9999** when the LiDAR is not started, still booting or not connected. It never counts as an obstacle (`< 200` stays false).
 
 ### Notes for developers
@@ -73,6 +74,7 @@ Es erscheinen zwei Kategorien: **Maqueen** und **LiDAR**. Alles ist reines TypeS
 ### Fehlerwerte
 
 - `Linienlage` liefert **100**, wenn kein Sensor die Linie sieht. In einer Rechnung wie `40 - 20 × Linienlage` ist das ein riesiger Wert; die Motorblöcke begrenzen auf −100…100.
+- Der LiDAR muss auf die I2C-Adresse **0x33** eingestellt sein (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“.
 - `Abstand … (mm)` liefert **9999**, wenn der LiDAR nicht gestartet, noch im Hochlauf oder nicht angeschlossen ist. Das zählt nie als Hindernis (`< 200` bleibt falsch).
 
 ### Hinweise für Entwickler
