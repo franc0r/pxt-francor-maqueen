@@ -1,6 +1,8 @@
 {
   "francorLidar": "Blöcke für den DFRobot Matrix-LiDAR-Abstandssensor.",
   "francorMaqueen": "Blöcke für den DFRobot Maqueen Plus V3/V2.",
+  "francorMaqueen.ambientLight": "Helligkeit der Umgebungslicht-Sensoren. Bei beiden Seiten kommt der Mittelwert.",
+  "francorMaqueen.ambientLight|param|side": "welcher Sensor",
   "francorMaqueen.atCrossroad": "Was der Roboter an einer Kreuzung macht (links, rechts und geradeaus möglich).",
   "francorMaqueen.atCrossroad|param|m": "was er tun soll",
   "francorMaqueen.atLeftOrStraight": "Was der Roboter macht, wo er links abbiegen oder geradeaus fahren kann.",
@@ -17,6 +19,10 @@
   "francorMaqueen.drive": "Fährt mit dem linken und dem rechten Rad. Negative Werte fahren rückwärts.",
   "francorMaqueen.driveBoth": "Fährt mit beiden Rädern gleich schnell. Negative Werte fahren rückwärts.",
   "francorMaqueen.driveBoth|param|speed": "Tempo in Prozent, z. B. 50",
+  "francorMaqueen.driveDistance": "Fährt eine genaue Strecke mit der Regelung der Platine.",
+  "francorMaqueen.driveDistance|param|cm": "Strecke in Zentimetern",
+  "francorMaqueen.driveDistance|param|dir": "vorwärts oder rückwärts",
+  "francorMaqueen.driveDistance|param|wait": "warten, bis die Fahrt fertig ist, oder sofort weitermachen",
   "francorMaqueen.driveV2": "Fährt mit dem linken und dem rechten Rad (V2). Negative Werte fahren rückwärts.",
   "francorMaqueen.driveV2|param|left": "Tempo des linken Rads in Prozent, z. B. 50",
   "francorMaqueen.driveV2|param|right": "Tempo des rechten Rads in Prozent, z. B. 50",
@@ -37,6 +43,7 @@
   "francorMaqueen.patrolSpeed": "Stellt das Tempo der Linienverfolgung ein.",
   "francorMaqueen.patrolSpeed|param|level": "Stufe von 1 (langsam) bis 5 (schnell), z. B. 1",
   "francorMaqueen.patrol|param|on": "an oder aus",
+  "francorMaqueen.pidStop": "Stoppt eine laufende Fahrt oder Drehung.",
   "francorMaqueen.redLed": "Schaltet eine rote LED vorne an oder aus (V2).",
   "francorMaqueen.redLed|param|on": "an oder aus",
   "francorMaqueen.redLed|param|side": "welche LED",
@@ -56,5 +63,11 @@
   "francorMaqueen.startV2": "Startet den Maqueen Plus V2 und wartet, bis er antwortet.\nZeigt einen Haken, wenn er bereit ist.",
   "francorMaqueen.stop": "Hält beide Motoren an.",
   "francorMaqueen.stopV2": "Hält beide Motoren an (V2).",
-  "francorMaqueen.ultrasonic": "Misst den Abstand mit dem Ultraschall-Sensor in cm (V2). Gibt 0, wenn nichts zu sehen ist."
+  "francorMaqueen.turn": "Dreht den Roboter auf der Stelle um einen genauen Winkel. Positive Winkel drehen im Uhrzeigersinn, negative dagegen.",
+  "francorMaqueen.turn|param|degrees": "Winkel in Grad",
+  "francorMaqueen.turn|param|wait": "warten, bis die Drehung fertig ist, oder sofort weitermachen",
+  "francorMaqueen.ultrasonic": "Misst den Abstand mit dem Ultraschall-Sensor in cm (V2). Gibt 0, wenn nichts zu sehen ist.",
+  "francorMaqueen.version": "Firmware-Version der Platine als Text.",
+  "francorMaqueen.wheelSpeed": "Geschwindigkeit eines Rads in Zentimetern pro Sekunde (aus den Encodern). Bei beiden Seiten kommt der Mittelwert.",
+  "francorMaqueen.wheelSpeed|param|side": "welches Rad"
 }

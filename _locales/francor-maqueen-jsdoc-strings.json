@@ -1,5 +1,7 @@
 {
   "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
+  "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith both sides, gives the average.",
+  "francorMaqueen.ambientLight|param|side": "which sensor",
   "francorMaqueen.atCrossroad": "What the robot does at a crossroad (left, right and straight).",
   "francorMaqueen.atCrossroad|param|m": "what to do",
   "francorMaqueen.atLeftOrStraight": "What the robot does where it can turn left or go straight.",
@@ -16,6 +18,10 @@
   "francorMaqueen.drive": "Drives the left and right wheel. Negative values drive backwards.",
   "francorMaqueen.driveBoth": "Drives both wheels at the same speed. Negative values drive backwards.",
   "francorMaqueen.driveBoth|param|speed": "speed in percent, eg: 50",
+  "francorMaqueen.driveDistance": "Drives an exact distance with the board's PID controller.",
+  "francorMaqueen.driveDistance|param|cm": "distance in centimetres, eg: 20",
+  "francorMaqueen.driveDistance|param|dir": "forward or backward",
+  "francorMaqueen.driveDistance|param|wait": "wait until the move is done, or continue at once",
   "francorMaqueen.driveV2": "Drives the left and right wheel (V2). Negative values drive backwards.",
   "francorMaqueen.driveV2|param|left": "speed of the left wheel in percent, eg: 50",
   "francorMaqueen.driveV2|param|right": "speed of the right wheel in percent, eg: 50",
@@ -36,6 +42,7 @@
   "francorMaqueen.patrolSpeed": "Sets the speed of the built-in line following.",
   "francorMaqueen.patrolSpeed|param|level": "speed level from 1 (slow) to 5 (fast), eg: 1",
   "francorMaqueen.patrol|param|on": "on or off",
+  "francorMaqueen.pidStop": "Stops a running drive or turn move.",
   "francorMaqueen.redLed": "Turns a red LED on the front on or off (V2).",
   "francorMaqueen.redLed|param|on": "on or off",
   "francorMaqueen.redLed|param|side": "which LED",
@@ -55,5 +62,11 @@
   "francorMaqueen.startV2": "Starts the Maqueen Plus V2 and waits until it answers.\nShows a check mark when ready.",
   "francorMaqueen.stop": "Stops both motors.",
   "francorMaqueen.stopV2": "Stops both motors (V2).",
-  "francorMaqueen.ultrasonic": "Measures the distance with the ultrasonic sensor in cm (V2). Gives 0 if nothing is seen."
+  "francorMaqueen.turn": "Turns on the spot by an exact angle with the board's PID controller.\nPositive angles turn clockwise, negative angles counter-clockwise.",
+  "francorMaqueen.turn|param|degrees": "angle in degrees, eg: 90",
+  "francorMaqueen.turn|param|wait": "wait until the move is done, or continue at once",
+  "francorMaqueen.ultrasonic": "Measures the distance with the ultrasonic sensor in cm (V2). Gives 0 if nothing is seen.",
+  "francorMaqueen.version": "Firmware version of the board as text.",
+  "francorMaqueen.wheelSpeed": "Speed of a wheel in centimetres per second (from the encoders).\nWith both sides, gives the average.",
+  "francorMaqueen.wheelSpeed|param|side": "which wheel"
 }

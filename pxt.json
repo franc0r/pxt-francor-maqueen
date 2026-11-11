@@ -18,6 +18,8 @@
         "crossings.ts",
         "lights.ts",
         "headlights.ts",
+        "pid.ts",
+        "telemetry.ts",
         "v2.ts",
         "README.md",
         "_locales/de/francor-maqueen-strings.json",
