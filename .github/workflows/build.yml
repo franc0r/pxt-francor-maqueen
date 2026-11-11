@@ -1,5 +1,7 @@
 name: build
 on: [push, pull_request]
+env:
+  PUPPETEER_SKIP_DOWNLOAD: "1"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+      - run: npm ci
       - run: npx pxt target microbit
       - run: npx pxt install
       - run: npx pxt build

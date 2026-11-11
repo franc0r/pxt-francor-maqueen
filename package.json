@@ -10,10 +10,8 @@
     "check:locales": "node tools/check-locales.mjs"
   },
   "devDependencies": {
-    "pxt": "*",
-    "typescript": "*"
-  },
-  "dependencies": {
-    "pxt-microbit": "^9.1.2"
+    "pxt-core": "13.2.17",
+    "pxt-microbit": "^9.1.2",
+    "typescript": "7.0.2"
   }
 }
