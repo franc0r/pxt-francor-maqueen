@@ -23,3 +23,10 @@ if (francorMaqueen.junction() == francorMaqueen.isJunction(francorMaqueen.Juncti
 }
 francorMaqueen.resetCrossings()
 francorMaqueen.crossingsCounted()
+francorMaqueen.setLight(francorMaqueen.Led.Two, francorMaqueen.colors(francorMaqueen.Colors.Red))
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.rgb(0, 0, 255))
+francorMaqueen.brightness(80)
+francorMaqueen.lightsOff()
+francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Green)
+francorMaqueen.redLed(francorMaqueen.Side.Left, francorMaqueen.OnOff.On)
+let ultrasonicDistance = francorMaqueen.ultrasonic()

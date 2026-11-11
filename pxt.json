@@ -16,6 +16,9 @@
         "line.ts",
         "patrol.ts",
         "crossings.ts",
+        "lights.ts",
+        "headlights.ts",
+        "v2.ts",
         "README.md",
         "_locales/de/francor-maqueen-strings.json",
         "_locales/de/francor-maqueen-jsdoc-strings.json"
