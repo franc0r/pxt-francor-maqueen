@@ -1,1 +1,20 @@
-{}
+{
+  "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
+  "francorMaqueen.drive": "Drives the left and right wheel. Negative values drive backwards.",
+  "francorMaqueen.driveBoth": "Drives both wheels at the same speed. Negative values drive backwards.",
+  "francorMaqueen.driveBoth|param|speed": "speed in percent, eg: 50",
+  "francorMaqueen.driveV2": "Drives the left and right wheel (V2). Negative values drive backwards.",
+  "francorMaqueen.driveV2|param|left": "speed of the left wheel in percent, eg: 50",
+  "francorMaqueen.driveV2|param|right": "speed of the right wheel in percent, eg: 50",
+  "francorMaqueen.drive|param|left": "speed of the left wheel in percent, eg: 50",
+  "francorMaqueen.drive|param|right": "speed of the right wheel in percent, eg: 50",
+  "francorMaqueen.linePosition": "Where the line is: from -2 (far right) to 2 (far left), 0 = centered.\nPositive = line on the left. 100 = no line seen.",
+  "francorMaqueen.seesLine": "True if the line sensor sees the black line.",
+  "francorMaqueen.seesLine|param|s": "which sensor",
+  "francorMaqueen.sensorRaw": "Raw brightness value of a line sensor.",
+  "francorMaqueen.sensorRaw|param|s": "which sensor",
+  "francorMaqueen.start": "Resets the Maqueen Plus V3 board and waits until it answers.\nShows a check mark when ready.",
+  "francorMaqueen.startV2": "Starts the Maqueen Plus V2 and waits until it answers.\nShows a check mark when ready.",
+  "francorMaqueen.stop": "Stops both motors.",
+  "francorMaqueen.stopV2": "Stops both motors (V2)."
+}

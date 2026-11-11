@@ -1,4 +1,21 @@
 {
   "francorLidar": "Blöcke für den DFRobot Matrix-LiDAR-Abstandssensor.",
-  "francorMaqueen": "Blöcke für den DFRobot Maqueen Plus V3/V2."
+  "francorMaqueen": "Blöcke für den DFRobot Maqueen Plus V3/V2.",
+  "francorMaqueen.drive": "Fährt mit dem linken und dem rechten Rad. Negative Werte fahren rückwärts.",
+  "francorMaqueen.driveBoth": "Fährt mit beiden Rädern gleich schnell. Negative Werte fahren rückwärts.",
+  "francorMaqueen.driveBoth|param|speed": "Tempo in Prozent, z. B. 50",
+  "francorMaqueen.driveV2": "Fährt mit dem linken und dem rechten Rad (V2). Negative Werte fahren rückwärts.",
+  "francorMaqueen.driveV2|param|left": "Tempo des linken Rads in Prozent, z. B. 50",
+  "francorMaqueen.driveV2|param|right": "Tempo des rechten Rads in Prozent, z. B. 50",
+  "francorMaqueen.drive|param|left": "Tempo des linken Rads in Prozent, z. B. 50",
+  "francorMaqueen.drive|param|right": "Tempo des rechten Rads in Prozent, z. B. 50",
+  "francorMaqueen.linePosition": "Wo die Linie liegt: von -2 (ganz rechts) bis 2 (ganz links), 0 = in der Mitte.\nPositiv = Linie links. 100 = keine Linie gesehen.",
+  "francorMaqueen.seesLine": "Wahr, wenn der Liniensensor die schwarze Linie sieht.",
+  "francorMaqueen.seesLine|param|s": "welcher Sensor",
+  "francorMaqueen.sensorRaw": "Roher Helligkeitswert eines Liniensensors.",
+  "francorMaqueen.sensorRaw|param|s": "welcher Sensor",
+  "francorMaqueen.start": "Setzt die Maqueen-Plus-V3-Platine zurück und wartet, bis sie antwortet.\nZeigt einen Haken, wenn sie bereit ist.",
+  "francorMaqueen.startV2": "Startet den Maqueen Plus V2 und wartet, bis er antwortet.\nZeigt einen Haken, wenn er bereit ist.",
+  "francorMaqueen.stop": "Hält beide Motoren an.",
+  "francorMaqueen.stopV2": "Hält beide Motoren an (V2)."
 }

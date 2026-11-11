@@ -1,4 +1,25 @@
 {
+  "francorMaqueen.LineSensor.L1|block": "L1",
+  "francorMaqueen.LineSensor.L2|block": "L2",
+  "francorMaqueen.LineSensor.M|block": "M",
+  "francorMaqueen.LineSensor.R1|block": "R1",
+  "francorMaqueen.LineSensor.R2|block": "R2",
+  "francorMaqueen.OnOff.Off|block": "off",
+  "francorMaqueen.OnOff.On|block": "on",
+  "francorMaqueen.driveBoth|block": "drive %speed |\\%",
+  "francorMaqueen.driveV2|block": "drive left %left |\\% right %right |\\% (V2)",
+  "francorMaqueen.drive|block": "drive left %left |\\% right %right |\\%",
+  "francorMaqueen.linePosition|block": "line position",
+  "francorMaqueen.seesLine|block": "sensor %s sees line",
+  "francorMaqueen.sensorRaw|block": "raw value sensor %s",
+  "francorMaqueen.startV2|block": "start Maqueen V2",
+  "francorMaqueen.start|block": "start Maqueen",
+  "francorMaqueen.stopV2|block": "stop motors (V2)",
+  "francorMaqueen.stop|block": "stop motors",
+  "francorMaqueen|block": "Maqueen",
   "{id:category}FrancorLidar": "FrancorLidar",
-  "{id:category}FrancorMaqueen": "FrancorMaqueen"
+  "{id:category}FrancorMaqueen": "FrancorMaqueen",
+  "{id:group}Line": "Line",
+  "{id:group}V2": "V2",
+  "{id:group}V3": "V3"
 }

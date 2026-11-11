@@ -10,6 +10,10 @@
     "files": [
         "main.ts",
         "logic.ts",
+        "core.ts",
+        "start.ts",
+        "motors.ts",
+        "line.ts",
         "README.md",
         "_locales/de/francor-maqueen-strings.json",
         "_locales/de/francor-maqueen-jsdoc-strings.json"
