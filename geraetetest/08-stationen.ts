@@ -1,17 +1,18 @@
 // Gerätetest 8: Die Stationen 3, 4 und 5 mit den neuen Blöcken nachgebaut.
 // Immer nur EINE der drei Fassungen (normal, mit Laser, Grand Prix) in ein Projekt einfügen:
 // Dazu die anderen Fassungen auskommentieren. Hier steht aktiv: Grand Prix normal.
+// Ampel und Stopp-Licht sind die Scheinwerfer (im Original "RGB Car Lights").
 // Die Profi-Fassung steht darunter, auskommentiert.
 
 // ---- Station 3: Fahrschule (Linie auf Knopf A, Not-Aus auf Knopf B) ----
 /*
 francorMaqueen.start()
 input.onButtonPressed(Button.A, function () {
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Yellow))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Yellow)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Green)
     francorMaqueen.patrolSpeed(1)
     francorMaqueen.patrol(francorMaqueen.OnOff.On)
 })
@@ -25,11 +26,11 @@ input.onButtonPressed(Button.B, function () {
 francorMaqueen.start()
 francorLidar.start()
 input.onButtonPressed(Button.A, function () {
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Yellow))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Yellow)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Green)
     francorMaqueen.patrolSpeed(1)
     francorMaqueen.patrol(francorMaqueen.OnOff.On)
 })
@@ -39,7 +40,7 @@ input.onButtonPressed(Button.B, function () {
 basic.forever(function () {
     if (francorLidar.distance(francorLidar.LidarSide.Front) < 200) {
         francorMaqueen.patrol(francorMaqueen.OnOff.Off)
-        francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+        francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     }
 })
 */
@@ -55,11 +56,11 @@ input.onButtonPressed(Button.A, function () {
     francorMaqueen.atTJunction(francorMaqueen.TRule.Stop)
     francorMaqueen.patrolSpeed(2)
     basic.clearScreen()
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Yellow))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Yellow)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Green)
     francorMaqueen.patrol(francorMaqueen.OnOff.On)
 })
 input.onButtonPressed(Button.B, function () {
@@ -78,7 +79,7 @@ francorMaqueen.onCrossing(1, function () {
 basic.forever(function () {
     if (francorLidar.distance(francorLidar.LidarSide.Front) < 200) {
         francorMaqueen.patrol(francorMaqueen.OnOff.Off)
-        francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+        francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     }
 })
 
@@ -103,11 +104,11 @@ input.onButtonPressed(Button.A, function () {
     regelnSetzen()
     francorMaqueen.patrolSpeed(2)
     basic.clearScreen()
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Yellow))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Yellow)
     basic.pause(1000)
-    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Green)
     francorMaqueen.patrol(francorMaqueen.OnOff.On)
     basic.pause(500)
     francorMaqueen.headlight(francorMaqueen.Side.Right, francorMaqueen.HeadColor.Yellow)
@@ -139,7 +140,7 @@ francorMaqueen.onCrossing(1, function () {
 basic.forever(function () {
     if (francorLidar.distance(francorLidar.LidarSide.Front) < 200) {
         francorMaqueen.patrol(francorMaqueen.OnOff.Off)
-        francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Red))
+        francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
         if (gesprungen) {
             gesprungen = false
             music.play(music.builtInPlayableMelody(Melodies.Dadadadum), music.PlaybackMode.InBackground)

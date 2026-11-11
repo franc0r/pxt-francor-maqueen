@@ -39,7 +39,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] Regel `an T-Kreuzung`: links / rechts / halt. → Ja.
 - [ ] Regel `an Abzweig links`: geradeaus / links / halt. → Ja.
 - [ ] Regel `an Abzweig rechts`: geradeaus / rechts / halt. → Ja.
-- [ ] `erkannte Kreuzung`: Punkt oben links geht an beim T. Stimmt die Art (Kreuzung, T, Abzweig links, Abzweig rechts)? → Ja.
+- [ ] `erkannte Kreuzung`: Roboter mit Verfolgung aus über eine Kreuzung schieben, Logo-Taste drücken und loslassen: Die Zahl muss passen. 1 = Kreuzung, 2 = T, 3 = Abzweig links, 4 = Abzweig rechts, 0 = keine. Am T geht außerdem der Punkt oben links an. → Ja.
 - [ ] `wenn Kreuzung Nummer 1 erreicht` läuft genau einmal je Kreuzung (keine Doppelzählung). → Ja.
 - [ ] Zähler: B zeigt die Anzahl gezählter Kreuzungen. → Stimmt mit der Fahrt überein.
 - [ ] Nach Verfolgung aus (B) und wieder an (A): Regeln gelten neu (Standard), `setze Kreuzungszähler zurück` zählt von 0. → Ja.
@@ -87,8 +87,8 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 
 In der Datei sind Station 3, 4, 5 (normal) und 5 (Profi) hintereinander; immer nur eine Fassung aktiv lassen (die anderen stehen auskommentiert).
 
-- [ ] Station 3: A: Ampel rot, gelb, grün, dann folgt er der Linie; B stoppt. → Ja.
-- [ ] Station 4: wie 3, dazu Hand vor den Laser: er stoppt und leuchtet rot. A startet neu. → Ja.
+- [ ] Station 3: A: Ampel (Scheinwerfer) rot, gelb, grün, dann folgt er der Linie; B stoppt. → Ja.
+- [ ] Station 4: wie 3, dazu Hand vor den Laser: er stoppt, Scheinwerfer rot. A startet neu. → Ja.
 - [ ] Station 5 normal: Regeln, Kreuzung 1 umstellen, Tempo-Zone ab 3 (Zahl 1), Melodie bei 4, Halt am T. Zählnummern 1 bis 4 stimmen? → Ja.
 - [ ] Station 5 Profi: Am Ziel springt er per `fahre 20 cm … warte bis fertig` (ohne die 2000-ms-Pause) über die Lücke und nimmt danach die Linie wieder auf, nicht mitten im Sprung. → Ja.
 - [ ] Profi: Melodie erst am Pro-Ziel (Laser-Stopp mit `gesprungen`). → Ja.

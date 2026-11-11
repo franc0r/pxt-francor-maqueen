@@ -43,7 +43,7 @@ npm run check:locales
 
 - Device tests (checklist and programs to paste into a project) are in `geraetetest/`. They are not part of the package.
 - Values still to be checked on the robot are marked `// VORLÄUFIG (Gerätetest):` in the code.
-- Hardware protocol: see the Rust driver of FRANCOR e. V. (`franc0r`), which is the reference for the registers used here.
+- Hardware protocol: see the Rust driver of FRANCOR e. V., the reference for the registers used here: <https://github.com/franc0r/francor-maqueen-plus> and <https://github.com/franc0r/francor-maqueen-plus-microbit>.
 
 ### License
 
@@ -90,7 +90,7 @@ npm run check:locales
 
 - Gerätetests (Checkliste und Programme zum Einfügen in ein Projekt) stehen in `geraetetest/`. Sie gehören nicht zum Paket.
 - Werte, die noch am Roboter zu prüfen sind, tragen im Code die Marke `// VORLÄUFIG (Gerätetest):`.
-- Hardware-Protokoll: der Rust-Treiber von FRANCOR e. V. (`franc0r`) ist die Referenz für die verwendeten Register.
+- Hardware-Protokoll: der Rust-Treiber von FRANCOR e. V. ist die Referenz für die verwendeten Register: <https://github.com/franc0r/francor-maqueen-plus> und <https://github.com/franc0r/francor-maqueen-plus-microbit>.
 
 ### Lizenz
 

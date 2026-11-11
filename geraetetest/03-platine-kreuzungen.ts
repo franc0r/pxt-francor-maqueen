@@ -1,5 +1,5 @@
 // Gerätetest 3: Linienverfolgung und Kreuzungen auf der Platine.
-// A = Verfolgung an (Tempo 1), B = aus. Logo-Taste: Tempo 5.
+// A = Verfolgung an (Tempo 1), B = aus. Logo-Taste drücken: Tempo 5, loslassen: Kreuzungsart zeigen.
 // Regeln stehen unten; ändere sie je Durchgang (geradeaus / links / rechts / halt).
 francorMaqueen.start()
 francorMaqueen.resetCrossings()
@@ -24,7 +24,13 @@ francorMaqueen.onCrossing(1, function () {
     francorMaqueen.atRightOrStraight(francorMaqueen.RightRule.Straight)
     basic.showNumber(1)
 })
-// Welche Kreuzungsart sieht er? 1 = Kreuzung, 2 = T, 3 = Abzweig links, 4 = Abzweig rechts.
+// Welche Kreuzungsart sieht er? Logo-Taste zeigt die Zahl:
+// 0 = keine, 1 = Kreuzung, 2 = T, 3 = Abzweig links, 4 = Abzweig rechts.
+// Roboter mit Verfolgung aus (B) über eine Kreuzung schieben und Logo drücken.
+input.onLogoEvent(TouchButtonEvent.Released, function () {
+    basic.showNumber(francorMaqueen.junction())
+})
+// Punkt oben links: sieht er gerade ein T?
 basic.forever(function () {
     if (francorMaqueen.junction() == francorMaqueen.isJunction(francorMaqueen.Junction.TJunction)) {
         led.plot(0, 0)
