@@ -7,7 +7,7 @@
   "francorLidar.isDirection|param|d": "the direction",
   "francorLidar.setAvoidDistance": "Distance at which the sensor starts to suggest a direction (100 to 500 mm).\nOn the Maqueen use 200 at most, otherwise the sensor sees the floor.",
   "francorLidar.setAvoidDistance|param|mm": "distance in mm",
-  "francorLidar.start": "Switches the LiDAR on. Returns immediately; the sensor is polled in the background.\nIn the first seconds and without a sensor, \"distance\" is 9999.\nThe sensor must be set to I2C address 0x33 (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like \"no sensor\".",
+  "francorLidar.start": "Switches the LiDAR on. It keeps measuring in the background, your program goes on at once.\nIn the first seconds and without a sensor, the distance is 9999.",
   "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
   "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith both sides, gives the average.",
   "francorMaqueen.ambientLight|param|side": "which sensor",
@@ -42,7 +42,7 @@
   "francorMaqueen.isJunction": "A junction type, to compare with \"junction seen\".",
   "francorMaqueen.isJunction|param|j": "the junction type",
   "francorMaqueen.junction": "The junction the line sensors see right now (0 = none). Compare it with a junction block.",
-  "francorMaqueen.lightsOff": "Turns all lights underneath off.",
+  "francorMaqueen.lightsOff": "Turns all lights off: the four underneath and both headlights.",
   "francorMaqueen.linePosition": "Where the line is: from -2 (far right) to 2 (far left), 0 = centered.\nPositive = line on the left. 100 = no line seen.",
   "francorMaqueen.onCrossing": "Runs once when the robot reaches the crossing with this number.\nCounting starts at the start (or at \"reset crossing counter\").",
   "francorMaqueen.onCrossing|param|handler": "what to do",
@@ -76,6 +76,6 @@
   "francorMaqueen.turn|param|wait": "wait until the move is done, or continue at once",
   "francorMaqueen.ultrasonic": "Measures the distance with the ultrasonic sensor in cm (V2). Gives 0 if nothing is seen.",
   "francorMaqueen.version": "Firmware version of the board as text.",
-  "francorMaqueen.wheelSpeed": "Speed of a wheel in centimetres per second (from the encoders).\nWith both sides, gives the average.",
+  "francorMaqueen.wheelSpeed": "Speed of a wheel in centimetres per second.\nWith \"both\", gives the average.",
   "francorMaqueen.wheelSpeed|param|side": "which wheel"
 }

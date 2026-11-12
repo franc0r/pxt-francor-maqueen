@@ -1,5 +1,5 @@
 // Gerätetest 4: Lichter. A = LEDs 1 bis 4 einzeln rot (Nummer zeigen), B = alle Farben,
-// A+B = Scheinwerfer alle Farben, Logo = alles aus.
+// A+B = Scheinwerfer alle Farben, Logo = alles an, nach 1 s "alle Lichter aus".
 // Notiere, welche Nummer welche LED ist (vorn links ...).
 francorMaqueen.start()
 input.onButtonPressed(Button.A, function () {
@@ -42,6 +42,8 @@ input.onButtonPressed(Button.AB, function () {
     francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Off)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
+    francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+    basic.pause(1000)
     francorMaqueen.lightsOff()
-    francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Off)
 })

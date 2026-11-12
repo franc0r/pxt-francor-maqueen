@@ -40,6 +40,7 @@ namespace francorMaqueen {
      * @param color the colour
      */
     //% blockId=francor_headlight block="headlight %side color %color"
+    //% side.defl=Side.Both color.defl=HeadColor.Red
     //% group="V3" weight=60
     export function headlight(side: Side, color: HeadColor): void {
         writeSide(side, color)

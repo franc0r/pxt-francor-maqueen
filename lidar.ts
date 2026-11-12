@@ -21,7 +21,11 @@ namespace francorLidar {
     const CMD_SET_MODE = 1
     const CMD_AVOID_DATA = 6
     const CMD_AVOID_DIST = 7
-    const REQUEST_TIMEOUT_MS = 100
+    // Time the sensor gets to answer. Only the background fiber waits for it,
+    // never a pupil's block, so generous limits cost nothing.
+    const MODE_TIMEOUT_MS = 2000
+    const AVOID_TIMEOUT_MS = 1000
+    const POLL_TIMEOUT_MS = 500
     const BOOT_MS = 3000
     const MAX_FAILS = 5
 
@@ -33,12 +37,16 @@ namespace francorLidar {
     let failCount = 0
     let pendingAvoidMm = 0 // 0 = nothing to send
     let avoidDirty = false
+    // Diagnostics for the device test (geraetetest/06), not blocks.
+    let diagInits = 0
+    let diagLastMs = 0
 
-    // Reads one response within REQUEST_TIMEOUT_MS. expectCmd < 0 accepts any echo.
-    // Returns the payload, or null on failure/timeout. Never blocks longer than the limit.
-    function readResponse(expectCmd: number): number[] {
+    // Reads one response within timeoutMs. expectCmd < 0 accepts any echo
+    // (set-mode, as in the Rust driver). Returns the payload, or null on
+    // failure/timeout. Never blocks longer than the limit.
+    function readResponse(expectCmd: number, timeoutMs: number): number[] {
         const t0 = control.millis()
-        while (control.millis() - t0 < REQUEST_TIMEOUT_MS) {
+        while (control.millis() - t0 < timeoutMs) {
             const status = pins.i2cReadNumber(ADDR, NumberFormat.UInt8BE, false)
             if (status == 0x53) {
                 const cmd = pins.i2cReadNumber(ADDR, NumberFormat.UInt8BE, false)
@@ -62,27 +70,33 @@ namespace francorLidar {
         return null
     }
 
-    function request(cmd: number, payload: number[], expectCmd: number): number[] {
+    function request(cmd: number, payload: number[], expectCmd: number, timeoutMs: number): number[] {
+        const t0 = control.millis()
         const frame = francorMaqueen.lidarRequest(cmd, payload)
         pins.i2cWriteBuffer(ADDR, Buffer.fromArray(frame), false)
         basic.pause(10)
-        return readResponse(expectCmd)
+        const res = readResponse(expectCmd, timeoutMs)
+        diagLastMs = control.millis() - t0
+        return res
     }
 
     function sendAvoidDistance(): void {
         // Clear the flag first: a setAvoidDistance during the request sets it again.
         const mm = pendingAvoidMm
         avoidDirty = false
-        if (request(CMD_AVOID_DIST, [(mm >> 8) & 0xFF, mm & 0xFF], -1) == null) {
+        if (request(CMD_AVOID_DIST, [(mm >> 8) & 0xFF, mm & 0xFF], CMD_AVOID_DIST, AVOID_TIMEOUT_MS) == null) {
             avoidDirty = true
         }
     }
 
     function poll(): void {
-        const p = request(CMD_AVOID_DATA, [], CMD_AVOID_DATA)
-        if (p != null && p.length >= 8) {
-            const o = francorMaqueen.lidarObstacle(p)
-            lastDirection = (o[0] >= 1 && o[0] <= 3) ? o[0] : AvoidDir.Free
+        const p = request(CMD_AVOID_DATA, [], CMD_AVOID_DATA, POLL_TIMEOUT_MS)
+        const o = (p != null && p.length >= 8) ? francorMaqueen.lidarObstacle(p) : null
+        // A bus error reads as zero bytes (i2cReadBuffer zero-fills), which would be
+        // "0 mm" = obstacle. Direction 0 marks such a frame; treat it as a failed poll.
+        // VORLÄUFIG (Gerätetest): the sensor only ever sends direction 1..3.
+        if (o != null && o[0] >= 1 && o[0] <= 3) {
+            lastDirection = o[0]
             lastLeft = o[1]
             lastFront = o[2]
             lastRight = o[3]
@@ -99,10 +113,23 @@ namespace francorLidar {
         }
     }
 
+    // Sends the mode until the sensor accepts it. Also used after MAX_FAILS
+    // failed polls: the sensor may have lost power (robot switched off while
+    // the micro:bit stays on USB) and forgotten its mode.
+    function setup(): void {
+        while (control.millis() < BOOT_MS) basic.pause(50)
+        // VORLÄUFIG (Gerätetest): mode payload [1,0,0,4] = avoidance mode, 4x4
+        while (request(CMD_SET_MODE, [1, 0, 0, 4], -1, MODE_TIMEOUT_MS) == null) {
+            basic.pause(1000)
+        }
+        diagInits++
+        failCount = 0
+        if (pendingAvoidMm > 0) avoidDirty = true
+    }
+
     /**
-     * Switches the LiDAR on. Returns immediately; the sensor is polled in the background.
-     * In the first seconds and without a sensor, "distance" is 9999.
-     * The sensor must be set to I2C address 0x33 (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like "no sensor".
+     * Switches the LiDAR on. It keeps measuring in the background, your program goes on at once.
+     * In the first seconds and without a sensor, the distance is 9999.
      */
     //% blockId=francor_lidar_start block="start LiDAR"
     //% weight=100
@@ -110,18 +137,20 @@ namespace francorLidar {
         if (started) return
         started = true
         control.inBackground(() => {
-            while (control.millis() < BOOT_MS) basic.pause(50)
-            // VORLÄUFIG (Gerätetest): mode payload [1,0,0,4] = avoidance mode, 4x4
-            while (request(CMD_SET_MODE, [1, 0, 0, 4], -1) == null) {
-                basic.pause(1000)
-            }
-            if (pendingAvoidMm > 0) avoidDirty = true
+            setup()
             while (true) {
                 if (avoidDirty) sendAvoidDistance()
                 poll()
+                if (failCount >= MAX_FAILS) setup()
                 basic.pause(20)
             }
         })
+    }
+
+    // Device test only (geraetetest/06): how often the mode was set, polls
+    // failed in a row, and how long the last request took in ms.
+    export function diagnostics(): number[] {
+        return [diagInits, failCount, diagLastMs]
     }
 
     /**

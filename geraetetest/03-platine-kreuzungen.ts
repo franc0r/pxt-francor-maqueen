@@ -40,9 +40,13 @@ basic.forever(function () {
 })
 // Test "Kreuzungszähler bei parallelem Lesen": Diese Schleife liest ständig die Linienlage
 // (zweiter I2C-Leser neben der Kreuzungsschleife). Zählung muss trotzdem stimmen.
+// Nur die unterste Reihe neu zeichnen, damit angezeigte Zahlen lesbar bleiben.
 basic.forever(function () {
-    basic.clearScreen()
-    led.plot(Math.constrain(Math.round(2 - francorMaqueen.linePosition()), 0, 4), 4)
+    const x = Math.constrain(Math.round(2 - francorMaqueen.linePosition()), 0, 4)
+    for (let i = 0; i < 5; i++) {
+        if (i != x) led.unplot(i, 4)
+    }
+    led.plot(x, 4)
     basic.pause(5)
 })
 // Variante für "Regeln gelten neu (Standard)": In Knopf A die vier Regelzeilen

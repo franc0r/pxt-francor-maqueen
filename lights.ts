@@ -109,12 +109,13 @@ namespace francorMaqueen {
     }
 
     /**
-     * Turns all lights underneath off.
+     * Turns all lights off: the four underneath and both headlights.
      */
     //% blockId=francor_lights_off block="all lights off"
     //% group="Lights" weight=86
     export function lightsOff(): void {
         for (let i = 0; i < 4; i++) lightColors[i] = 0
         showLights()
+        writeSide(Side.Both, 0)
     }
 }

@@ -1,7 +1,7 @@
 namespace francorMaqueen {
     /**
-     * Speed of a wheel in centimetres per second (from the encoders).
-     * With both sides, gives the average.
+     * Speed of a wheel in centimetres per second.
+     * With "both", gives the average.
      * @param side which wheel
      */
     //% blockId=francor_wheel_speed block="wheel speed %side (cm/s)"

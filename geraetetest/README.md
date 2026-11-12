@@ -27,7 +27,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] Keine Linie (Roboter neben den Streifen): → 100.
 - [ ] Mittelpunkt im Display (Sensor M) leuchtet nur auf der Linie. → Ja.
 - [ ] B (`fahre 40 − 20 × Linienlage …`), Roboter schräg zur Linie: lenkt er zur Linie hin? → Ja. Sonst Vorzeichen falsch! Gefunden: ____
-- [ ] Linie verloren (100): Roboter fährt nicht irre davon, Räder bleiben im erlaubten Bereich. → Er fährt geradeaus-ähnlich oder dreht, aber kein Absturz.
+- [ ] Linie verloren (100), während B lenkt: Roboter hält an. → Ja.
 - [ ] A+B: Rohwerte M, L1, R1 nacheinander. Weiß ≈ 3800, Schwarz ≈ 2700? → Werte: ____
 
 ## 03 Platine: Linienverfolgung und Kreuzungen (`03-platine-kreuzungen.ts`, Grand-Prix-Matte)
@@ -51,7 +51,8 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] B: alle Farben nacheinander (rot, orange, gelb, grün, blau, indigo, violett, lila, weiß). → Farben stimmen. Wenn nicht: Reihenfolge (GRB) notieren.
 - [ ] Helligkeit 20 ist merklich dunkler als 255. → Ja.
 - [ ] A+B: Scheinwerfer links/rechts in allen Farben (rot, grün, gelb, blau, lila, cyan, weiß), dann aus. → Farben stimmen, links und rechts nicht vertauscht.
-- [ ] Logo: alles aus. → Ja.
+- [ ] Logo: Scheinwerfer rot, Lichter unten grün; nach 1 s macht `alle Lichter aus` alles aus, auch die Scheinwerfer. → Ja.
+- [ ] Neuer Scheinwerfer-Block aus der Liste gezogen: steht auf „beide“ und „rot“. → Ja.
 - [ ] Lichter ohne `starte Maqueen`: Zuerst die Zeile `francorMaqueen.start()` in `04-lichter.ts` löschen, dann flashen. Die Lichter gehen an (V3-Pin P1). → Ja.
 
 ## 05 PID-Fahrt (`05-pid.ts`, Platz frei)
@@ -69,10 +70,14 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [ ] Der Sensor ist auf I2C-Adresse 0x33 gestellt (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“. → Ja.
 - [ ] Ohne `LiDAR einschalten`: A zeigt 9999. → Ja.
 - [ ] B (einschalten): A direkt danach zeigt noch 9999; nach ca. 3 s echte Werte. → Ja.
+- [ ] Serielle Konsole (Gerät) nach dem Einschalten: `inits=1`, `fails=0`. Wie lange dauert eine Anfrage? → `ms=` ____ (Grenze: 500 ms je Abfrage, 2000 ms fürs Einschalten).
+- [ ] Neu einrichten: micro:bit bleibt am USB, Roboter aus- und wieder einschalten. Nach ein paar Sekunden kommen wieder echte Werte, `inits` ist um 1 gestiegen. → Ja. Dauer bis zu echten Werten: ____ s
+- [ ] Roboter erst einschalten, nachdem der micro:bit schon läuft (Ablauf wie in Station 3): Der LiDAR liefert danach echte Werte. → Ja.
 - [ ] Hand vor den Sensor (ca. 10 cm): vorne < 200, Logo-Taste zeigt das Herz. → Ja.
 - [ ] Hand weg: Wert steigt wieder, Logo zeigt das Kreuz. → Ja.
 - [ ] A+B: links, rechts und Richtung (1 links, 2 rechts, 3 frei) sinnvoll. → Ja.
 - [ ] Sensor abgesteckt, LiDAR eingeschaltet: kein Hängen, Abstand 9999, Richtung frei (3), nie < 200. → Ja.
+- [ ] Sensor im laufenden Betrieb abziehen: Abstand springt auf 9999, nie auf 0 oder < 200 (kein Fehlstopp). Wieder anstecken: echte Werte kommen zurück. → Ja.
 - [ ] Kein Verhungern: Der Punkt im `dauerhaft` läuft flüssig über die oberste Reihe, auch mit eingeschaltetem LiDAR ohne Sensor. → Ja.
 - [ ] Roboter ohne LiDAR, nur Linienprogramm (Station 3, ohne `LiDAR einschalten`): läuft flüssig. → Ja.
 
@@ -110,5 +115,6 @@ In der Datei sind Station 3, 4, 5 (normal) und 5 (Profi) hintereinander; immer n
 | Warten auf Busy-Flag 500 ms | `pid.ts` | 05 |
 | Drehrichtung positiver Winkel | `pid.ts` | 05 |
 | LiDAR-Modus `[1,0,0,4]` | `lidar.ts` | 06 |
+| LiDAR-Richtung nur 1 bis 3 (0 = Busfehler) | `lidar.ts` | 06 |
 | V2 ohne Reset | `start.ts` | 07 |
 | Rote LED an = 1 | `v2.ts` | 07 |

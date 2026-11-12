@@ -7,9 +7,9 @@
   "francorLidar.isDirection|param|d": "die Richtung",
   "francorLidar.setAvoidDistance": "Ab diesem Abstand rät der Sensor eine Richtung (100 bis 500 mm). Am Maqueen höchstens 200, sonst sieht der Sensor den Boden.",
   "francorLidar.setAvoidDistance|param|mm": "Abstand in mm",
-  "francorLidar.start": "Schaltet den LiDAR ein. Kehrt sofort zurück, der Sensor wird im Hintergrund abgefragt. In den ersten Sekunden und ohne Sensor ist der Abstand 9999. Der Sensor muss auf die I2C-Adresse 0x33 eingestellt sein (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst bleibt der Wert für immer 9999, wie ohne Sensor.",
+  "francorLidar.start": "Schaltet den LiDAR ein. Er misst danach im Hintergrund weiter, dein Programm läuft sofort weiter. In den ersten Sekunden und ohne Sensor ist der Abstand 9999.",
   "francorMaqueen": "Blöcke für den DFRobot Maqueen Plus V3/V2.",
-  "francorMaqueen.ambientLight": "Helligkeit der Umgebungslicht-Sensoren. Bei beiden Seiten kommt der Mittelwert.",
+  "francorMaqueen.ambientLight": "Helligkeit der Umgebungslicht-Sensoren. Bei „beide“ kommt der Mittelwert.",
   "francorMaqueen.ambientLight|param|side": "welcher Sensor",
   "francorMaqueen.atCrossroad": "Was der Roboter an einer Kreuzung macht (links, rechts und geradeaus möglich).",
   "francorMaqueen.atCrossroad|param|m": "was er tun soll",
@@ -42,7 +42,7 @@
   "francorMaqueen.isJunction": "Eine Kreuzungsart zum Vergleichen mit \"erkannte Kreuzung\".",
   "francorMaqueen.isJunction|param|j": "die Kreuzungsart",
   "francorMaqueen.junction": "Welche Kreuzung die Sensoren gerade sehen (0 = keine). Vergleiche sie mit einem Kreuzungs-Block.",
-  "francorMaqueen.lightsOff": "Schaltet alle Lichter unten aus.",
+  "francorMaqueen.lightsOff": "Schaltet alle Lichter aus: die vier unten und beide Scheinwerfer.",
   "francorMaqueen.linePosition": "Wo die Linie liegt: von -2 (ganz rechts) bis 2 (ganz links), 0 = in der Mitte.\nPositiv = Linie links. 100 = keine Linie gesehen.",
   "francorMaqueen.onCrossing": "Läuft einmal, sobald der Roboter die Kreuzung mit dieser Nummer erreicht.\nGezählt wird ab dem Start (oder ab \"setze Kreuzungszähler zurück\").",
   "francorMaqueen.onCrossing|param|handler": "was dann passiert",
@@ -76,6 +76,6 @@
   "francorMaqueen.turn|param|wait": "warten, bis die Drehung fertig ist, oder sofort weitermachen",
   "francorMaqueen.ultrasonic": "Misst den Abstand mit dem Ultraschall-Sensor in cm (V2). Gibt 0, wenn nichts zu sehen ist.",
   "francorMaqueen.version": "Firmware-Version der Platine als Text.",
-  "francorMaqueen.wheelSpeed": "Geschwindigkeit eines Rads in Zentimetern pro Sekunde (aus den Encodern). Bei beiden Seiten kommt der Mittelwert.",
+  "francorMaqueen.wheelSpeed": "Geschwindigkeit eines Rads in Zentimetern pro Sekunde. Bei „beide“ kommt der Mittelwert.",
   "francorMaqueen.wheelSpeed|param|side": "welches Rad"
 }

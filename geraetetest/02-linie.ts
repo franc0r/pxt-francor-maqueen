@@ -11,7 +11,12 @@ input.onButtonPressed(Button.B, function () {
     // Vorzeichen-Test: Er soll zur Linie hin lenken. Quer zur Linie halten.
     for (let i = 0; i < 100; i++) {
         let lage = francorMaqueen.linePosition()
-        francorMaqueen.drive(40 - 20 * lage, 40 + 20 * lage)
+        if (lage == 100) {
+            // Keine Linie: anhalten statt mit voller Kraft drehen.
+            francorMaqueen.stop()
+        } else {
+            francorMaqueen.drive(40 - 20 * lage, 40 + 20 * lage)
+        }
         basic.pause(100)
     }
     francorMaqueen.stop()

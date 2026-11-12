@@ -25,8 +25,9 @@ Two categories appear: **Maqueen** and **LiDAR**. Everything is plain TypeScript
 
 ### Error values
 
-- `line position` gives **100** when no sensor sees the line. In calculations such as `40 - 20 * line position` this is a huge value; the motor blocks limit it to -100…100.
+- `line position` gives **100** when no sensor sees the line. In calculations such as `40 - 20 * line position` this is a huge value; the motor blocks limit it to -100…100, so the robot spins at full speed. Check `line position = 100` first and stop.
 - The LiDAR must be set to I2C address **0x33** (DIP switches, as delivered on the Maqueen V3); otherwise it reads 9999 forever, like "no sensor".
+- If the LiDAR stops answering (for example the robot was switched off while the micro:bit stayed on USB), it reads 9999 and is set up again automatically once it answers.
 - `distance … (mm)` gives **9999** when the LiDAR is not started, still booting or not connected. It never counts as an obstacle (`< 200` stays false).
 
 ### Notes for developers
@@ -73,8 +74,9 @@ Es erscheinen zwei Kategorien: **Maqueen** und **LiDAR**. Alles ist reines TypeS
 
 ### Fehlerwerte
 
-- `Linienlage` liefert **100**, wenn kein Sensor die Linie sieht. In einer Rechnung wie `40 - 20 × Linienlage` ist das ein riesiger Wert; die Motorblöcke begrenzen auf −100…100.
+- `Linienlage` liefert **100**, wenn kein Sensor die Linie sieht. In einer Rechnung wie `40 - 20 × Linienlage` ist das ein riesiger Wert; die Motorblöcke begrenzen auf −100…100, der Roboter dreht sich also mit voller Kraft. Deshalb zuerst `Linienlage = 100` prüfen und anhalten.
 - Der LiDAR muss auf die I2C-Adresse **0x33** eingestellt sein (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“.
+- Antwortet der LiDAR nicht mehr (etwa weil der Roboter aus war, während der micro:bit am USB hing), liest er 9999 und wird automatisch neu eingerichtet, sobald er wieder antwortet.
 - `Abstand … (mm)` liefert **9999**, wenn der LiDAR nicht gestartet, noch im Hochlauf oder nicht angeschlossen ist. Das zählt nie als Hindernis (`< 200` bleibt falsch).
 
 ### Hinweise für Entwickler
