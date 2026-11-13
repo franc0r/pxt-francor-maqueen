@@ -28,6 +28,10 @@ namespace francorLidar {
     const POLL_TIMEOUT_MS = 500
     const BOOT_MS = 3000
     const MAX_FAILS = 5
+    // After the mode is set the sensor needs 2 to 3 s before it delivers data
+    // (device test 06: polls time out meanwhile). Failures in this time do not
+    // trigger a new setup, which would only restart the warm-up.
+    const WARMUP_MS = 5000
 
     let started = false
     let lastDirection = AvoidDir.Free
@@ -37,6 +41,7 @@ namespace francorLidar {
     let failCount = 0
     let pendingAvoidMm = 0 // 0 = nothing to send
     let avoidDirty = false
+    let modeSetAt = 0
     // Diagnostics for the device test (geraetetest/06), not blocks.
     let diagInits = 0
     let diagLastMs = 0
@@ -123,6 +128,7 @@ namespace francorLidar {
             basic.pause(1000)
         }
         diagInits++
+        modeSetAt = control.millis()
         failCount = 0
         if (pendingAvoidMm > 0) avoidDirty = true
     }
@@ -142,7 +148,7 @@ namespace francorLidar {
             while (true) {
                 if (avoidDirty) sendAvoidDistance()
                 poll()
-                if (failCount >= MAX_FAILS) setup()
+                if (failCount >= MAX_FAILS && control.millis() - modeSetAt > WARMUP_MS) setup()
                 basic.pause(20)
             }
         })
