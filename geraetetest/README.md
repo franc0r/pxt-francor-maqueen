@@ -113,7 +113,7 @@ In der Datei sind Station 3, 4, 5 (normal) und 5 (Profi) hintereinander; immer n
 
 - [ ] MakeCode auf Deutsch: alle Blöcke der Erweiterung durchsehen. → Kein englischer Rest.
 - [ ] MakeCode auf Englisch: alle Blöcke durchsehen. → Kein deutscher Rest.
-- [ ] Hilfe: Rechtsklick auf einen Block der Erweiterung, „Hilfe“. MakeCode auf Deutsch: Es kommt die deutsche Seite (`_locales/de/docs/…`). MakeCode auf Englisch: die englische Seite (`docs/…`). Kein Sprung zur README. → Ja. (Zeigt Deutsch die englische Seite, kennt MakeCode die Sprachauswahl für Hilfe-Seiten nicht: dann wieder eine Seite mit beiden Sprachen.)
+- [ ] Hilfe: Rechtsklick auf einen Block der Erweiterung, „Hilfe“. MakeCode auf Deutsch: Es kommt die deutsche Seite (`docs/_locales/de/…`). MakeCode auf Englisch: die englische Seite (`docs/…`). Kein Sprung zur README. → Ja. (Zeigt Deutsch die englische Seite, kennt MakeCode die Sprachauswahl für Hilfe-Seiten nicht: dann wieder eine Seite mit beiden Sprachen.)
 - [ ] Offline: Projekt mit der Erweiterung einmal mit Netz laden, Netz aus, Seite neu laden, kompilieren, flashen. → Geht.
 
 ## Zusammenfassung der vorläufigen Werte

@@ -1,10 +1,11 @@
 // Writes one help page per block from the locale files:
 //   docs/<name>.md                  English
-//   _locales/de/docs/<name>.md      German
-// MakeCode opens docs/<name>.md when someone right-clicks a block and picks
-// "Hilfe", because every block carries `//% help=github:franc0r/pxt-francor-maqueen/docs/<name>`.
-// For a German user MakeCode should prefer _locales/de/docs/<name>.md (its lookup for
-// GitHub markdown; not confirmed for help pages, see geraetetest/README.md).
+//   docs/_locales/de/<name>.md      German
+// Every block carries `//% help=github:francor-maqueen/docs/<name>`. The editor looks the
+// file up among the files of the project and its extensions, where a file is named
+// "<name in pxt.json>/<path>", and for a German user it tries
+// "francor-maqueen/docs/_locales/de/<name>.md" first. So the pages must also be listed
+// in pxt.json "files"; this script keeps that list in sync.
 //
 //   node tools/gen-docs.mjs          writes docs/*.md
 //   node tools/gen-docs.mjs --check  fails if docs/ is out of date or a block has no help line
@@ -41,7 +42,7 @@ function page(strings, key, lang) {
     }
     out.push(lang === "de"
         ? "[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/" + key.replace(".", "-") + ".md)"
-        : "[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/" + key.replace(".", "-") + ".md)", "");
+        : "[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/" + key.replace(".", "-") + ".md)", "");
     return out.join("\n");
 }
 
@@ -50,13 +51,13 @@ const files = {};
 for (const key of blocks) {
     const name = key.replace(".", "-");
     files[`docs/${name}.md`] = page(en, key, "en");
-    files[`_locales/de/docs/${name}.md`] = page(de, key, "de");
+    files[`docs/_locales/de/${name}.md`] = page(de, key, "de");
 }
 const pages = Object.fromEntries(blocks.map((k) => [k.replace(".", "-"), 1]));
 
 // Every block must point at its page.
 const problems = [];
-const helpRe = /\/\/% blockId=(\w+).*\n(?:\s*\/\/%.*\n)*?\s*\/\/% help=github:franc0r\/pxt-francor-maqueen\/docs\/([\w-]+)/g;
+const helpRe = /\/\/% blockId=(\w+).*\n(?:\s*\/\/%.*\n)*?\s*\/\/% help=github:francor-maqueen\/docs\/([\w-]+)/g;
 const used = new Set();
 for (const f of readdirSync(root).filter((f) => f.endsWith(".ts") && f !== "test.ts")) {
     const src = readFileSync(join(root, f), "utf8");
@@ -68,7 +69,14 @@ for (const f of readdirSync(root).filter((f) => f.endsWith(".ts") && f !== "test
 for (const name of Object.keys(pages)) if (!used.has(name)) problems.push(`no block points at docs/${name}.md`);
 for (const name of used) if (!(name in pages)) problems.push(`help line points at missing page docs/${name}.md`);
 
+// pxt.json "files" must list every page (the editor only knows listed files).
+const pxtPath = join(root, "pxt.json");
+const pxt = JSON.parse(readFileSync(pxtPath, "utf8"));
+const wanted = [...pxt.files.filter((f) => !f.startsWith("docs/")), ...Object.keys(files).sort()];
+const same = JSON.stringify(wanted) === JSON.stringify(pxt.files);
+
 if (check) {
+    if (!same) problems.push("pxt.json files does not list the docs pages (run node tools/gen-docs.mjs)");
     for (const [path, text] of Object.entries(files)) {
         const p = join(root, path);
         if (!existsSync(p) || readFileSync(p, "utf8") !== text) problems.push(`${path} is out of date (run node tools/gen-docs.mjs)`);
@@ -78,6 +86,7 @@ if (check) {
         mkdirSync(dirname(join(root, path)), { recursive: true });
         writeFileSync(join(root, path), text);
     }
+    if (!same) writeFileSync(pxtPath, JSON.stringify({ ...pxt, files: wanted }, null, 4) + "\n");
 }
 if (problems.length) {
     console.error(problems.join("\n"));

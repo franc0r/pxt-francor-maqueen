@@ -36,7 +36,7 @@ namespace francorMaqueen {
      * @param handler what to do
      */
     //% blockId=francor_on_crossing
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-onCrossing
+    //% help=github:francor-maqueen/docs/francorMaqueen-onCrossing
     //% afterOnStart=true
     //% block="when crossing number $nr reached"
     //% nr.min=1 nr.defl=1
@@ -51,7 +51,7 @@ namespace francorMaqueen {
      * How many crossings the robot has seen so far.
      */
     //% blockId=francor_crossings_counted block="crossings counted"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-crossingsCounted
+    //% help=github:francor-maqueen/docs/francorMaqueen-crossingsCounted
     //% group="V3" weight=71
     export function crossingsCounted(): number {
         startCounter()
@@ -62,7 +62,7 @@ namespace francorMaqueen {
      * Starts counting from 0 again.
      */
     //% blockId=francor_reset_crossings block="reset crossing counter"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-resetCrossings
+    //% help=github:francor-maqueen/docs/francorMaqueen-resetCrossings
     //% group="V3" weight=70
     export function resetCrossings(): void {
         count = 0

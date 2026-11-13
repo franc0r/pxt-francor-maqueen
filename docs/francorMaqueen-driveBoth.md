@@ -6,4 +6,4 @@ Parameters:
 
 * `speed`: speed in percent, eg: 50
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-driveBoth.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-driveBoth.md)

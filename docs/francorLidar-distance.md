@@ -7,4 +7,4 @@ Parameters:
 
 * `side`: which side
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorLidar-distance.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorLidar-distance.md)

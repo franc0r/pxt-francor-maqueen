@@ -6,4 +6,4 @@ Parameters:
 
 * `v`: brightness from 0 to 255, eg: 128
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-brightness.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-brightness.md)

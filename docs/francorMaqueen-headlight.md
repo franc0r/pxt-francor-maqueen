@@ -7,4 +7,4 @@ Parameters:
 * `color`: the colour
 * `side`: which headlight
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-headlight.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-headlight.md)

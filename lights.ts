@@ -59,7 +59,7 @@ namespace francorMaqueen {
      * @param color the colour
      */
     //% blockId=francor_set_light block="set light %led to %color=francor_colors"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-setLight
+    //% help=github:francor-maqueen/docs/francorMaqueen-setLight
     //% group="Lights" weight=90
     export function setLight(led: Led, color: number): void {
         // VORLÄUFIG (Gerätetest): LED-Nummer -> Pufferindex (1 -> 0 ... 4 -> 3).
@@ -76,7 +76,7 @@ namespace francorMaqueen {
      * @param c the colour
      */
     //% blockId=francor_colors block="%c"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-colors
+    //% help=github:francor-maqueen/docs/francorMaqueen-colors
     //% group="Lights" weight=89 blockGap=8
     export function colors(c: Colors): number {
         return c
@@ -89,7 +89,7 @@ namespace francorMaqueen {
      * @param b blue, eg: 0
      */
     //% blockId=francor_rgb block="red %r green %g blue %b"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-rgb
+    //% help=github:francor-maqueen/docs/francorMaqueen-rgb
     //% r.min=0 r.max=255 g.min=0 g.max=255 b.min=0 b.max=255
     //% group="Lights" weight=88 blockGap=8
     export function rgb(r: number, g: number, b: number): number {
@@ -104,7 +104,7 @@ namespace francorMaqueen {
      * @param v brightness from 0 to 255, eg: 128
      */
     //% blockId=francor_brightness block="light brightness %v"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-brightness
+    //% help=github:francor-maqueen/docs/francorMaqueen-brightness
     //% v.min=0 v.max=255 v.defl=128
     //% group="Lights" weight=87
     export function brightness(v: number): void {
@@ -116,7 +116,7 @@ namespace francorMaqueen {
      * Turns all lights off: the four underneath and both headlights.
      */
     //% blockId=francor_lights_off block="all lights off"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-lightsOff
+    //% help=github:francor-maqueen/docs/francorMaqueen-lightsOff
     //% group="Lights" weight=86
     export function lightsOff(): void {
         for (let i = 0; i < 4; i++) lightColors[i] = 0

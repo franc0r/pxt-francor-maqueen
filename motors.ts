@@ -9,7 +9,7 @@ namespace francorMaqueen {
      * @param right speed of the right wheel in percent, eg: 50
      */
     //% blockId=francor_drive block="drive left %left |\\% right %right |\\%"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-drive
+    //% help=github:francor-maqueen/docs/francorMaqueen-drive
     //% left.min=-100 left.max=100 left.defl=50
     //% right.min=-100 right.max=100 right.defl=50
     //% group="V3" weight=90
@@ -22,7 +22,7 @@ namespace francorMaqueen {
      * @param speed speed in percent, eg: 50
      */
     //% blockId=francor_drive_both block="drive %speed |\\%"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-driveBoth
+    //% help=github:francor-maqueen/docs/francorMaqueen-driveBoth
     //% speed.min=-100 speed.max=100 speed.defl=50
     //% group="V3" weight=89
     export function driveBoth(speed: number): void {
@@ -33,7 +33,7 @@ namespace francorMaqueen {
      * Stops both motors.
      */
     //% blockId=francor_stop block="stop motors"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-stop
+    //% help=github:francor-maqueen/docs/francorMaqueen-stop
     //% group="V3" weight=88
     export function stop(): void {
         setMotors(0, 0)
@@ -45,7 +45,7 @@ namespace francorMaqueen {
      * @param right speed of the right wheel in percent, eg: 50
      */
     //% blockId=francor_drive_v2 block="drive left %left |\\% right %right |\\% (V2)"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-driveV2
+    //% help=github:francor-maqueen/docs/francorMaqueen-driveV2
     //% left.min=-100 left.max=100 left.defl=50
     //% right.min=-100 right.max=100 right.defl=50
     //% group="V2" weight=90
@@ -57,7 +57,7 @@ namespace francorMaqueen {
      * Stops both motors (V2).
      */
     //% blockId=francor_stop_v2 block="stop motors (V2)"
-    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-stopV2
+    //% help=github:francor-maqueen/docs/francorMaqueen-stopV2
     //% group="V2" weight=89
     export function stopV2(): void {
         setMotors(0, 0)

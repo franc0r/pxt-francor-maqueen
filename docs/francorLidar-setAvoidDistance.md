@@ -7,4 +7,4 @@ Parameters:
 
 * `mm`: distance in mm
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorLidar-setAvoidDistance.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorLidar-setAvoidDistance.md)

@@ -6,4 +6,4 @@ Parameters:
 
 * `s`: which sensor
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-seesLine.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-seesLine.md)

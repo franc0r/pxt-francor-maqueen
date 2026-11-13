@@ -8,4 +8,4 @@ Parameters:
 * `handler`: what to do
 * `nr`: number of the crossing, eg: 1
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-onCrossing.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-onCrossing.md)

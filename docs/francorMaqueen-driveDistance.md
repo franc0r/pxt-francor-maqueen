@@ -8,4 +8,4 @@ Parameters:
 * `dir`: forward or backward
 * `wait`: wait until the move is done, or continue at once
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/_locales/de/docs/francorMaqueen-driveDistance.md)
+[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-driveDistance.md)
