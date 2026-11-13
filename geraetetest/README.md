@@ -15,7 +15,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - **Nicht notiert, daher in den Zeilen offen:** tote Zone in Prozent (01), Rohwerte Weiß/Schwarz (02), LED-Nummern (04), Drehrichtung von `drehe 90 °` und Zeiten (05).
 - **03: teilweise.** Nur die X-Kreuzung getestet („sieht erstmal gut aus“). T-Kreuzung, Abzweig links und Abzweig rechts holt Martin nach; die Häkchen in 03 bleiben deshalb leer.
 - **07 (V2) und 08 (Stationen) und „Sprache und Offline“: noch offen.**
-- **06 gemessen:** Einschalten `ms=13`, Abfragen im Betrieb `ms=14`. Nach dem Modus liefert der Sensor erst nach etwa 2 bis 3 s Daten (zwei Abfragen und der erste Ausweich-Abstand laufen in die Zeit: `ms=512`, `1012`, `512`). Idee für v0.1.2: nach dem Setzen des Modus ca. 5 s lang Fehlschläge nicht zählen, sonst wird knapp neu eingerichtet.
+- **06 gemessen:** Einschalten `ms=13`, Abfragen im Betrieb `ms=14`. Nach dem Modus liefert der Sensor erst nach etwa 2 bis 3 s Daten (zwei Abfragen und der erste Ausweich-Abstand laufen in die Zeit: `ms=512`, `1012`, `512`). Seit v0.1.2 richtet der LiDAR erst neu ein, wenn der Modus mindestens 5 s her ist (Warm-up `WARMUP_MS`).
 - **02 Testprogramm:** Die Schleife zeichnet nicht mehr in angezeigte Zahlen (Pixelfehler waren ein Fehler im Testprogramm).
 
 ## 01 Start und Motoren (`01-start-motoren.ts`, Roboter aufbocken)
@@ -81,6 +81,7 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 - [x] B (einschalten): A direkt danach zeigt noch 9999; nach ca. 3 s echte Werte. → Ja.
 - [x] Serielle Konsole (Gerät) nach dem Einschalten: `inits=1`, `fails=0`. Wie lange dauert eine Anfrage? → `ms=` ____ (Grenze: 500 ms je Abfrage, 2000 ms fürs Einschalten).
 - [x] Neu einrichten: micro:bit bleibt am USB, Roboter aus- und wieder einschalten. Nach ein paar Sekunden kommen wieder echte Werte, `inits` ist um 1 gestiegen. → Ja. Dauer bis zu echten Werten: ____ s
+- [ ] Warm-up (v0.1.2): Nach dem Einschalten dauert es bis zu den ersten Werten ca. 2 bis 3 s; `inits` bleibt dabei 1 (kein zweites Einrichten während des Anlaufs). → Ja.
 - [x] Roboter erst einschalten, nachdem der micro:bit schon läuft (Ablauf wie in Station 3): Der LiDAR liefert danach echte Werte. → Ja.
 - [x] Hand vor den Sensor (ca. 10 cm): vorne < 200, Logo-Taste zeigt das Herz. → Ja.
 - [x] Hand weg: Wert steigt wieder, Logo zeigt das Kreuz. → Ja.
