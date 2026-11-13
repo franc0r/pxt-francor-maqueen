@@ -2,8 +2,20 @@
 
 What the robot does where it can turn right or go straight.
 
-Parameters:
+## Example
 
-* `m`: what to do
+```blocks
+francorMaqueen.start()
+francorMaqueen.atRightOrStraight(francorMaqueen.RightRule.Right)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-atRightOrStraight.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `m` | What to do |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

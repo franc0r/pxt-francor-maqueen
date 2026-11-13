@@ -2,8 +2,21 @@
 
 Geschwindigkeit eines Rads in Zentimetern pro Sekunde. Bei „beide“ kommt der Mittelwert.
 
-Parameter:
+## Beispiel
 
-* `side`: welches Rad
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    basic.showNumber(francorMaqueen.wheelSpeed(francorMaqueen.Side.Both))
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-wheelSpeed.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `side` | Welches Rad |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

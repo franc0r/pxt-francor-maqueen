@@ -2,9 +2,20 @@
 
 Sets the colour of a headlight.
 
-Parameters:
+## Example
 
-* `color`: the colour
-* `side`: which headlight
+```blocks
+francorMaqueen.start()
+francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-headlight.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `color` | The colour |
+| `side` | Which headlight |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

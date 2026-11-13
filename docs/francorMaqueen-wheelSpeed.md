@@ -1,10 +1,24 @@
 # wheel speed [side] (cm/s)
 
 Speed of a wheel in centimetres per second.
+
 With "both", gives the average.
 
-Parameters:
+## Example
 
-* `side`: which wheel
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    basic.showNumber(francorMaqueen.wheelSpeed(francorMaqueen.Side.Both))
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-wheelSpeed.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `side` | Which wheel |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

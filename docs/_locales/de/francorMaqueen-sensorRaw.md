@@ -2,8 +2,21 @@
 
 Roher Helligkeitswert eines Liniensensors.
 
-Parameter:
+## Beispiel
 
-* `s`: welcher Sensor
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    basic.showNumber(francorMaqueen.sensorRaw(francorMaqueen.LineSensor.M))
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-sensorRaw.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `s` | Welcher Sensor |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

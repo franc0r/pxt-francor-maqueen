@@ -2,10 +2,22 @@
 
 Fährt eine genaue Strecke mit der Regelung der Platine.
 
-Parameter:
+## Beispiel
 
-* `cm`: Strecke in Zentimetern
-* `dir`: vorwärts oder rückwärts
-* `wait`: warten, bis die Fahrt fertig ist, oder sofort weitermachen
+```blocks
+francorMaqueen.start()
+francorMaqueen.driveDistance(20, francorMaqueen.Dir.Forward, francorMaqueen.Wait.UntilDone)
+basic.showIcon(IconNames.Yes)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-driveDistance.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `cm` | Strecke in Zentimetern |
+| `dir` | Vorwärts oder rückwärts |
+| `wait` | Warten, bis die Fahrt fertig ist, oder sofort weitermachen |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

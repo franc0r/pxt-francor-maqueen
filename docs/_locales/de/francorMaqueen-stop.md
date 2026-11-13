@@ -2,4 +2,15 @@
 
 Hält beide Motoren an.
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-stop.md)
+## Beispiel
+
+```blocks
+francorMaqueen.start()
+francorMaqueen.driveBoth(50)
+basic.pause(1000)
+francorMaqueen.stop()
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

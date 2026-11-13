@@ -2,8 +2,20 @@
 
 Was der Roboter an einer T-Kreuzung macht (links und rechts möglich).
 
-Parameter:
+## Beispiel
 
-* `m`: was er tun soll
+```blocks
+francorMaqueen.start()
+francorMaqueen.atTJunction(francorMaqueen.TRule.Left)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-atTJunction.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `m` | Was er tun soll |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

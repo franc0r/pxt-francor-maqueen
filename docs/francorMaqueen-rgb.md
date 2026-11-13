@@ -2,10 +2,21 @@
 
 Mixes a colour from red, green and blue.
 
-Parameters:
+## Example
 
-* `b`: blue, eg: 0
-* `g`: green, eg: 128
-* `r`: red, eg: 255
+```blocks
+francorMaqueen.start()
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.rgb(255, 128, 0))
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-rgb.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `b` | Blue, e.g. 0 |
+| `g` | Green, e.g. 128 |
+| `r` | Red, e.g. 255 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

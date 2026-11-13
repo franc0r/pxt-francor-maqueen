@@ -2,4 +2,13 @@
 
 Firmware-Version der Platine als Text.
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-version.md)
+## Beispiel
+
+```blocks
+francorMaqueen.start()
+basic.showString(francorMaqueen.version())
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

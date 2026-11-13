@@ -1,10 +1,21 @@
-# drive left [left] % right [right] %
+# drive left [left]% right [right]%
 
 Drives the left and right wheel. Negative values drive backwards.
 
-Parameters:
+## Example
 
-* `left`: speed of the left wheel in percent, eg: 50
-* `right`: speed of the right wheel in percent, eg: 50
+```blocks
+francorMaqueen.start()
+francorMaqueen.drive(60, 40)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-drive.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `left` | Speed of the left wheel in percent, e.g. 50 |
+| `right` | Speed of the right wheel in percent, e.g. 50 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -2,8 +2,19 @@
 
 Gibt dir eine Farbe.
 
-Parameter:
+## Beispiel
 
-* `c`: die Farbe
+```blocks
+francorMaqueen.start()
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Green))
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-colors.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `c` | Die Farbe |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

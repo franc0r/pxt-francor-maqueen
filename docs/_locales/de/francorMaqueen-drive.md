@@ -1,10 +1,21 @@
-# fahre links [left] % rechts [right] %
+# fahre links [left]% rechts [right]%
 
 Fährt mit dem linken und dem rechten Rad. Negative Werte fahren rückwärts.
 
-Parameter:
+## Beispiel
 
-* `left`: Tempo des linken Rads in Prozent, z. B. 50
-* `right`: Tempo des rechten Rads in Prozent, z. B. 50
+```blocks
+francorMaqueen.start()
+francorMaqueen.drive(60, 40)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-drive.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `left` | Tempo des linken Rads in Prozent, z. B. 50 |
+| `right` | Tempo des rechten Rads in Prozent, z. B. 50 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

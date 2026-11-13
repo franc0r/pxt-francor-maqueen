@@ -2,9 +2,20 @@
 
 Turns a red LED on the front on or off (V2).
 
-Parameters:
+## Example
 
-* `on`: on or off
-* `side`: which LED
+```blocks
+francorMaqueen.startV2()
+francorMaqueen.redLed(francorMaqueen.Side.Both, francorMaqueen.OnOff.On)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-redLed.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `on` | On or off |
+| `side` | Which LED |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

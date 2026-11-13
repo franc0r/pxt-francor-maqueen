@@ -2,4 +2,15 @@
 
 Schaltet alle Lichter aus: die vier unten und beide Scheinwerfer.
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-lightsOff.md)
+## Beispiel
+
+```blocks
+francorMaqueen.start()
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Blue))
+basic.pause(1000)
+francorMaqueen.lightsOff()
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

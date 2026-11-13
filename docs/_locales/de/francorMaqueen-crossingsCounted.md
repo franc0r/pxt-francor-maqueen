@@ -2,4 +2,16 @@
 
 Wie viele Kreuzungen der Roboter bisher erkannt hat.
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-crossingsCounted.md)
+## Beispiel
+
+```blocks
+francorMaqueen.start()
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(francorMaqueen.crossingsCounted())
+})
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

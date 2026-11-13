@@ -1,10 +1,27 @@
 # distance [side] (mm)
 
 Distance to the nearest obstacle in mm.
+
 In the first seconds after "start LiDAR" and without a sensor the value is 9999.
 
-Parameters:
+## Example
 
-* `side`: which side
+```blocks
+francorMaqueen.start()
+francorLidar.start()
+basic.forever(function () {
+    if (francorLidar.distance(francorLidar.LidarSide.Front) < 200) {
+        francorMaqueen.stop()
+    }
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorLidar-distance.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `side` | Which side |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

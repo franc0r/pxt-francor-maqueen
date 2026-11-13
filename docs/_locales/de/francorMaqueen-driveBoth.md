@@ -1,9 +1,22 @@
-# fahre [speed] %
+# fahre [speed]%
 
 Fährt mit beiden Rädern gleich schnell. Negative Werte fahren rückwärts.
 
-Parameter:
+## Beispiel
 
-* `speed`: Tempo in Prozent, z. B. 50
+```blocks
+francorMaqueen.start()
+francorMaqueen.driveBoth(50)
+basic.pause(1000)
+francorMaqueen.stop()
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-driveBoth.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `speed` | Tempo in Prozent, z. B. 50 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -2,8 +2,25 @@
 
 Wahr, wenn der Liniensensor die schwarze Linie sieht.
 
-Parameter:
+## Beispiel
 
-* `s`: welcher Sensor
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    if (francorMaqueen.seesLine(francorMaqueen.LineSensor.M)) {
+        basic.showIcon(IconNames.Yes)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-seesLine.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `s` | Welcher Sensor |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

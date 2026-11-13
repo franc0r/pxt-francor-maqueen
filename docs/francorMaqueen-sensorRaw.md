@@ -2,8 +2,21 @@
 
 Raw brightness value of a line sensor.
 
-Parameters:
+## Example
 
-* `s`: which sensor
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    basic.showNumber(francorMaqueen.sensorRaw(francorMaqueen.LineSensor.M))
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-sensorRaw.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `s` | Which sensor |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

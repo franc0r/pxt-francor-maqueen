@@ -2,8 +2,21 @@
 
 Helligkeit der Umgebungslicht-Sensoren. Bei „beide“ kommt der Mittelwert.
 
-Parameter:
+## Beispiel
 
-* `side`: welcher Sensor
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    basic.showNumber(francorMaqueen.ambientLight(francorMaqueen.Side.Left))
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-ambientLight.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `side` | Welcher Sensor |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -27,25 +27,36 @@ const blocks = Object.keys(en)
     .map((k) => k.slice(0, -6))
     .sort();
 
+const examples = JSON.parse(readFileSync(join(root, "tools", "doc-examples.json"), "utf8"));
 const clean = (s) => String(s).replace(/\\n/g, "\n").trim();
-// "|\%" is pxt's escape for a literal percent sign in a block text.
-const shown = (s) => s.replace(/\|\\%/g, "%").replace(/%(\w+)/g, "[$1]");
+// "|\%" is pxt's escape for a literal percent sign in a block text; "%name" is a parameter.
+const title = (s) => s.replace(/ ?\|\\%/g, "%").replace(/%(\w+)/g, "[$1]").trim();
+const sentence = (s) => clean(s).replace(/,? eg: /g, ", e.g. ").replace(/^./, (c) => c.toUpperCase());
+
+const T = {
+    en: { example: "Example", params: "Parameters", name: "Parameter", meaning: "Meaning" },
+    de: { example: "Beispiel", params: "Parameter", name: "Parameter", meaning: "Bedeutung" }
+};
 
 function page(strings, key, lang) {
-    const out = [`# ${shown(strings[key + "|block"])}`, ""];
-    if (strings[key]) out.push(clean(strings[key]), "");
+    const t = T[lang];
+    const out = [`# ${title(strings[key + "|block"])}`, ""];
+    if (strings[key]) {
+        for (const para of clean(strings[key]).split("\n")) if (para.trim()) out.push(para.trim(), "");
+    }
+    if (!examples[key]) problems.push(`doc-examples.json has no example for ${key}`);
+    else out.push(`## ${t.example}`, "", "```blocks", examples[key], "```", "");
     const params = Object.keys(strings).filter((k) => k.startsWith(key + "|param|"));
     if (params.length) {
-        out.push(lang === "de" ? "Parameter:" : "Parameters:", "");
-        for (const p of params) out.push(`* \`${p.split("|param|")[1]}\`: ${clean(strings[p])}`);
+        out.push(`## ${t.params}`, "", `| ${t.name} | ${t.meaning} |`, "|---|---|");
+        for (const p of params) out.push(`| \`${p.split("|param|")[1]}\` | ${sentence(strings[p]).replace(/\|/g, "\\|")} |`);
         out.push("");
     }
-    out.push(lang === "de"
-        ? "[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/" + key.replace(".", "-") + ".md)"
-        : "[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/" + key.replace(".", "-") + ".md)", "");
+    out.push("---", "", "FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)", "");
     return out.join("\n");
 }
 
+const problems = [];
 // files: path relative to the repo root -> text
 const files = {};
 for (const key of blocks) {
@@ -56,7 +67,6 @@ for (const key of blocks) {
 const pages = Object.fromEntries(blocks.map((k) => [k.replace(".", "-"), 1]));
 
 // Every block must point at its page.
-const problems = [];
 const helpRe = /\/\/% blockId=(\w+).*\n(?:\s*\/\/%.*\n)*?\s*\/\/% help=github:francor-maqueen\/docs\/([\w-]+)/g;
 const used = new Set();
 for (const f of readdirSync(root).filter((f) => f.endsWith(".ts") && f !== "test.ts")) {

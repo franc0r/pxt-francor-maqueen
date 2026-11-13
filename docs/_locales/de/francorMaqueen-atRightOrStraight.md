@@ -2,8 +2,20 @@
 
 Was der Roboter macht, wo er rechts abbiegen oder geradeaus fahren kann.
 
-Parameter:
+## Beispiel
 
-* `m`: was er tun soll
+```blocks
+francorMaqueen.start()
+francorMaqueen.atRightOrStraight(francorMaqueen.RightRule.Right)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-atRightOrStraight.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `m` | Was er tun soll |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

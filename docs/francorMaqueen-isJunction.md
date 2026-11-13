@@ -2,8 +2,23 @@
 
 A junction type, to compare with "junction seen".
 
-Parameters:
+## Example
 
-* `j`: the junction type
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    if (francorMaqueen.junction() == francorMaqueen.isJunction(francorMaqueen.Junction.Crossroad)) {
+        basic.showIcon(IconNames.Yes)
+    }
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-isJunction.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `j` | The junction type |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

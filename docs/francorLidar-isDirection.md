@@ -2,8 +2,24 @@
 
 A direction, to compare with "avoid direction".
 
-Parameters:
+## Example
 
-* `d`: the direction
+```blocks
+francorMaqueen.start()
+francorLidar.start()
+basic.forever(function () {
+    if (francorLidar.direction() == francorLidar.isDirection(francorLidar.AvoidDir.Free)) {
+        basic.showIcon(IconNames.Yes)
+    }
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorLidar-isDirection.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `d` | The direction |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

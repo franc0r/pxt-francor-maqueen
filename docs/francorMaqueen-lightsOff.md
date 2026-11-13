@@ -2,4 +2,15 @@
 
 Turns all lights off: the four underneath and both headlights.
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-lightsOff.md)
+## Example
+
+```blocks
+francorMaqueen.start()
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.Blue))
+basic.pause(1000)
+francorMaqueen.lightsOff()
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

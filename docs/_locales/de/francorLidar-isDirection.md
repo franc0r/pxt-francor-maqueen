@@ -2,8 +2,24 @@
 
 Eine Richtung zum Vergleichen mit "Ausweichrichtung".
 
-Parameter:
+## Beispiel
 
-* `d`: die Richtung
+```blocks
+francorMaqueen.start()
+francorLidar.start()
+basic.forever(function () {
+    if (francorLidar.direction() == francorLidar.isDirection(francorLidar.AvoidDir.Free)) {
+        basic.showIcon(IconNames.Yes)
+    }
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorLidar-isDirection.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `d` | Die Richtung |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

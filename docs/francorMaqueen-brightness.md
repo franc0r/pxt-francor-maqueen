@@ -2,8 +2,20 @@
 
 Sets how bright the lights underneath are.
 
-Parameters:
+## Example
 
-* `v`: brightness from 0 to 255, eg: 128
+```blocks
+francorMaqueen.start()
+francorMaqueen.brightness(60)
+francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaqueen.Colors.White))
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-brightness.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `v` | Brightness from 0 to 255, e.g. 128 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

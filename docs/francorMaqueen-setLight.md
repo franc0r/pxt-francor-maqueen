@@ -2,9 +2,20 @@
 
 Sets one of the four lights underneath, or all of them.
 
-Parameters:
+## Example
 
-* `color`: the colour
-* `led`: which light
+```blocks
+francorMaqueen.start()
+francorMaqueen.setLight(francorMaqueen.Led.One, francorMaqueen.colors(francorMaqueen.Colors.Red))
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-setLight.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `color` | The colour |
+| `led` | Which light |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

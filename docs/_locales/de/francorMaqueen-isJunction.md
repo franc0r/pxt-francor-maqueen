@@ -2,8 +2,23 @@
 
 Eine Kreuzungsart zum Vergleichen mit "erkannte Kreuzung".
 
-Parameter:
+## Beispiel
 
-* `j`: die Kreuzungsart
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    if (francorMaqueen.junction() == francorMaqueen.isJunction(francorMaqueen.Junction.Crossroad)) {
+        basic.showIcon(IconNames.Yes)
+    }
+})
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-isJunction.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `j` | Die Kreuzungsart |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -2,8 +2,20 @@
 
 Sets the speed of the built-in line following.
 
-Parameters:
+## Example
 
-* `level`: speed level from 1 (slow) to 5 (fast), eg: 1
+```blocks
+francorMaqueen.start()
+francorMaqueen.patrolSpeed(2)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-patrolSpeed.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `level` | Speed level from 1 (slow) to 5 (fast), e.g. 1 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

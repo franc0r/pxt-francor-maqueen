@@ -1,11 +1,26 @@
 # when crossing number $nr reached
 
 Runs once when the robot reaches the crossing with this number.
+
 Counting starts at the start (or at "reset crossing counter").
 
-Parameters:
+## Example
 
-* `handler`: what to do
-* `nr`: number of the crossing, eg: 1
+```blocks
+francorMaqueen.start()
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+francorMaqueen.onCrossing(1, function () {
+    francorMaqueen.atRightOrStraight(francorMaqueen.RightRule.Straight)
+})
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-onCrossing.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `handler` | What to do |
+| `nr` | Number of the crossing, e.g. 1 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

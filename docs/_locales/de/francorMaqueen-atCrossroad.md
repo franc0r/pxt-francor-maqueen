@@ -2,8 +2,20 @@
 
 Was der Roboter an einer Kreuzung macht (links, rechts und geradeaus möglich).
 
-Parameter:
+## Beispiel
 
-* `m`: was er tun soll
+```blocks
+francorMaqueen.start()
+francorMaqueen.atCrossroad(francorMaqueen.CrossroadRule.Straight)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-atCrossroad.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `m` | Was er tun soll |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

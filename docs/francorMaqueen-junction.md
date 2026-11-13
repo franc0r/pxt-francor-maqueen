@@ -2,4 +2,17 @@
 
 The junction the line sensors see right now (0 = none). Compare it with a junction block.
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-junction.md)
+## Example
+
+```blocks
+francorMaqueen.start()
+basic.forever(function () {
+    if (francorMaqueen.junction() == francorMaqueen.isJunction(francorMaqueen.Junction.TJunction)) {
+        basic.showIcon(IconNames.Yes)
+    }
+})
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -2,8 +2,20 @@
 
 What the robot does at a T-junction (left and right).
 
-Parameters:
+## Example
 
-* `m`: what to do
+```blocks
+francorMaqueen.start()
+francorMaqueen.atTJunction(francorMaqueen.TRule.Left)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-atTJunction.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `m` | What to do |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

@@ -2,8 +2,20 @@
 
 Stellt das Tempo der Linienverfolgung ein.
 
-Parameter:
+## Beispiel
 
-* `level`: Stufe von 1 (langsam) bis 5 (schnell), z. B. 1
+```blocks
+francorMaqueen.start()
+francorMaqueen.patrolSpeed(2)
+francorMaqueen.patrol(francorMaqueen.OnOff.On)
+```
 
-[English version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/francorMaqueen-patrolSpeed.md)
+## Parameter
+
+| Parameter | Bedeutung |
+|---|---|
+| `level` | Stufe von 1 (langsam) bis 5 (schnell), z. B. 1 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

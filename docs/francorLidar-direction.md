@@ -2,4 +2,18 @@
 
 The direction the sensor suggests to pass an obstacle. "free" without a measurement.
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorLidar-direction.md)
+## Example
+
+```blocks
+francorMaqueen.start()
+francorLidar.start()
+basic.forever(function () {
+    if (francorLidar.direction() == francorLidar.isDirection(francorLidar.AvoidDir.Left)) {
+        basic.showArrow(ArrowNames.West)
+    }
+})
+```
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)

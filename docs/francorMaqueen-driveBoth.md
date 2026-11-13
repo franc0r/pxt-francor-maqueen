@@ -1,9 +1,22 @@
-# drive [speed] %
+# drive [speed]%
 
 Drives both wheels at the same speed. Negative values drive backwards.
 
-Parameters:
+## Example
 
-* `speed`: speed in percent, eg: 50
+```blocks
+francorMaqueen.start()
+francorMaqueen.driveBoth(50)
+basic.pause(1000)
+francorMaqueen.stop()
+```
 
-[Deutsche Version](https://github.com/franc0r/pxt-francor-maqueen/blob/main/docs/_locales/de/francorMaqueen-driveBoth.md)
+## Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `speed` | Speed in percent, e.g. 50 |
+
+---
+
+FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)
