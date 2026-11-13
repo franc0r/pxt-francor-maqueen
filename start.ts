@@ -29,6 +29,7 @@ namespace francorMaqueen {
      * Shows a check mark when ready.
      */
     //% blockId=francor_start block="start Maqueen"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-start
     //% group="V3" weight=100
     export function start(): void {
         model = Model.V3
@@ -42,6 +43,7 @@ namespace francorMaqueen {
      * Shows a check mark when ready.
      */
     //% blockId=francor_start_v2 block="start Maqueen V2"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-startV2
     //% group="V2" weight=100
     export function startV2(): void {
         model = Model.V2

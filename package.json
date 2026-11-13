@@ -7,7 +7,9 @@
   "scripts": {
     "build": "npx pxt build",
     "test": "node --test test-node/",
-    "check:locales": "node tools/check-locales.mjs"
+    "check:locales": "node tools/check-locales.mjs",
+    "docs": "node tools/gen-docs.mjs",
+    "check:docs": "node tools/gen-docs.mjs --check"
   },
   "devDependencies": {
     "pxt-core": "13.2.17",

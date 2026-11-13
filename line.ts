@@ -26,6 +26,7 @@ namespace francorMaqueen {
      * @param s which sensor
      */
     //% blockId=francor_sees_line block="sensor %s sees line"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-seesLine
     //% group="Line" weight=80
     export function seesLine(s: LineSensor): boolean {
         return (readReg(0x1D, 1)[0] & sensorMask(s)) != 0
@@ -36,6 +37,7 @@ namespace francorMaqueen {
      * @param s which sensor
      */
     //% blockId=francor_sensor_raw block="raw value sensor %s"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-sensorRaw
     //% group="Line" weight=79
     export function sensorRaw(s: LineSensor): number {
         const b = readReg(sensorReg(s), 2)
@@ -47,6 +49,7 @@ namespace francorMaqueen {
      * Positive = line on the left. 100 = no line seen.
      */
     //% blockId=francor_line_position block="line position"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-linePosition
     //% group="Line" weight=78
     export function linePosition(): number {
         return linePositionFromState(readReg(0x1D, 1)[0])

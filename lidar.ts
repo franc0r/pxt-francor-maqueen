@@ -132,6 +132,7 @@ namespace francorLidar {
      * In the first seconds and without a sensor, the distance is 9999.
      */
     //% blockId=francor_lidar_start block="start LiDAR"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorLidar-start
     //% weight=100
     export function start(): void {
         if (started) return
@@ -159,6 +160,7 @@ namespace francorLidar {
      * @param side which side
      */
     //% blockId=francor_lidar_distance block="distance %side (mm)"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorLidar-distance
     //% weight=90
     export function distance(side: LidarSide): number {
         if (side == LidarSide.Left) return lastLeft
@@ -170,6 +172,7 @@ namespace francorLidar {
      * The direction the sensor suggests to pass an obstacle. "free" without a measurement.
      */
     //% blockId=francor_lidar_direction block="avoid direction"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorLidar-direction
     //% weight=80
     export function direction(): number {
         return lastDirection
@@ -180,6 +183,7 @@ namespace francorLidar {
      * @param d the direction
      */
     //% blockId=francor_lidar_is_direction block="%d"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorLidar-isDirection
     //% weight=79
     export function isDirection(d: AvoidDir): number {
         return d
@@ -191,6 +195,7 @@ namespace francorLidar {
      * @param mm distance in mm
      */
     //% blockId=francor_lidar_avoid_distance block="avoid distance %mm mm"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorLidar-setAvoidDistance
     //% mm.min=100 mm.max=500 mm.defl=200
     //% weight=70
     export function setAvoidDistance(mm: number): void {

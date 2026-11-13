@@ -5,6 +5,7 @@ namespace francorMaqueen {
      * @param on on or off
      */
     //% blockId=francor_red_led block="red LED %side %on"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-redLed
     //% group="V2" weight=70
     export function redLed(side: Side, on: OnOff): void {
         // VORLÄUFIG (Gerätetest): an = 1, aus = 0.
@@ -15,6 +16,7 @@ namespace francorMaqueen {
      * Measures the distance with the ultrasonic sensor in cm (V2). Gives 0 if nothing is seen.
      */
     //% blockId=francor_ultrasonic block="ultrasonic distance (cm)"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-ultrasonic
     //% group="V2" weight=69
     export function ultrasonic(): number {
         let data = pingUltrasonic()

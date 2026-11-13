@@ -16,3 +16,4 @@ jobs:
       - run: npx pxt build
       - run: npm test
       - run: npm run check:locales
+      - run: npm run check:docs

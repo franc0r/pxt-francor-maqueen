@@ -5,6 +5,7 @@ namespace francorMaqueen {
      * @param side which wheel
      */
     //% blockId=francor_wheel_speed block="wheel speed %side (cm/s)"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-wheelSpeed
     //% group="V3" advanced=true weight=40
     export function wheelSpeed(side: Side): number {
         const b = readReg(76, 2)
@@ -21,6 +22,7 @@ namespace francorMaqueen {
      * @param side which sensor
      */
     //% blockId=francor_ambient_light block="ambient light %side"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-ambientLight
     //% group="V3" advanced=true weight=39
     export function ambientLight(side: Side): number {
         const b = readReg(78, 4)
@@ -35,6 +37,7 @@ namespace francorMaqueen {
      * Firmware version of the board as text.
      */
     //% blockId=francor_version block="firmware version"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-version
     //% group="V3" advanced=true weight=38
     export function version(): string {
         const len = readReg(0x32, 1)[0]

@@ -41,6 +41,7 @@ namespace francorMaqueen {
      * @param wait wait until the move is done, or continue at once
      */
     //% blockId=francor_drive_distance block="drive %cm cm %dir %wait"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-driveDistance
     //% cm.min=1 cm.max=1000 cm.defl=20
     //% group="V3" weight=55
     export function driveDistance(cm: number, dir: Dir, wait: Wait): void {
@@ -60,6 +61,7 @@ namespace francorMaqueen {
      * @param wait wait until the move is done, or continue at once
      */
     //% blockId=francor_turn block="turn %degrees ° %wait"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-turn
     //% degrees.min=-180 degrees.max=180 degrees.defl=90
     //% group="V3" weight=54
     export function turn(degrees: number, wait: Wait): void {
@@ -76,6 +78,7 @@ namespace francorMaqueen {
      * Stops a running drive or turn move.
      */
     //% blockId=francor_pid_stop block="stop drive move"
+    //% help=github:franc0r/pxt-francor-maqueen/docs/francorMaqueen-pidStop
     //% group="V3" weight=53
     export function pidStop(): void {
         writeReg(60, [0x10])
