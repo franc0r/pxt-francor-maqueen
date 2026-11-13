@@ -1,4 +1,4 @@
-# [j]
+# Junction type
 
 A junction type, to compare with "junction seen".
 
@@ -15,9 +15,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `j` | The junction type |
+* The junction type
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

@@ -1,4 +1,4 @@
-# rot [r] grün [g] blau [b]
+# rot … grün … blau …
 
 Mischt eine Farbe aus Rot, Grün und Blau.
 
@@ -11,11 +11,15 @@ francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.rgb(255, 128, 0))
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `b` | Blau, z. B. 0 |
-| `g` | Grün, z. B. 128 |
-| `r` | Rot, z. B. 255 |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Rot, z. B. 255
+2. Grün, z. B. 128
+3. Blau, z. B. 0
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

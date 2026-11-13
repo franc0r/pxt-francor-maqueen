@@ -1,4 +1,4 @@
-# Linien-Tempo [level]
+# Linien-Tempo …
 
 Stellt das Tempo der Linienverfolgung ein.
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `level` | Stufe von 1 (langsam) bis 5 (schnell), z. B. 1 |
+* Stufe von 1 (langsam) bis 5 (schnell), z. B. 1
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

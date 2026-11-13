@@ -1,4 +1,4 @@
-# Licht-Helligkeit [v]
+# Licht-Helligkeit …
 
 Stellt ein, wie hell die Lichter unten leuchten.
 
@@ -12,9 +12,11 @@ francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaq
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `v` | Helligkeit von 0 bis 255, z. B. 128 |
+* Helligkeit von 0 bis 255, z. B. 128
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

@@ -1,4 +1,4 @@
-# [c]
+# Farbe
 
 Gibt dir eine Farbe.
 
@@ -11,9 +11,11 @@ francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaq
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `c` | Die Farbe |
+* Die Farbe
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

@@ -13,6 +13,7 @@
 // Run `npm run check:locales` first (it refreshes the English locale files).
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { title, sortParams, sentence, clean } from "./docs-lib.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -28,30 +29,39 @@ const blocks = Object.keys(en)
     .sort();
 
 const examples = JSON.parse(readFileSync(join(root, "tools", "doc-examples.json"), "utf8"));
-const clean = (s) => String(s).replace(/\\n/g, "\n").trim();
-// "|\%" is pxt's escape for a literal percent sign in a block text; "%name" is a parameter.
-const title = (s) => s.replace(/ ?\|\\%/g, "%").replace(/%(\w+)/g, "[$1]").trim();
-const sentence = (s) => clean(s).replace(/,? eg: /g, ", e.g. ").replace(/^./, (c) => c.toUpperCase());
+const titles = JSON.parse(readFileSync(join(root, "tools", "doc-titles.json"), "utf8"));
 
 const T = {
-    en: { example: "Example", params: "Parameters", name: "Parameter", meaning: "Meaning" },
-    de: { example: "Beispiel", params: "Parameter", name: "Parameter", meaning: "Bedeutung" }
+    en: { example: "Example", params: "Parameters", order: "In the order of the gaps (…) in the block:" },
+    de: { example: "Beispiel", params: "Parameter", order: "In der Reihenfolge der Lücken (…) im Block:" }
 };
+
+// The editor's docs frame compiles ```blocks snippets in an empty project. It only knows this
+// extension when the page names it in a ```package fence (needs internet when the page opens).
+const pxtVersion = JSON.parse(readFileSync(join(root, "pxt.json"), "utf8")).version;
+const packageFence = ["```package", `francor-maqueen=github:franc0r/pxt-francor-maqueen#v${pxtVersion}`, "```", ""];
 
 function page(strings, key, lang) {
     const t = T[lang];
-    const out = [`# ${title(strings[key + "|block"])}`, ""];
+    const blockText = strings[key + "|block"];
+    const heading = (titles[key] && titles[key][lang]) || title(blockText);
+    if (/[\[\]%$=]\w|…$/.test(heading) && !(titles[key] && titles[key][lang]) && heading === "…") problems.push(`${key} (${lang}): title is only a parameter, add it to tools/doc-titles.json`);
+    const out = [`# ${heading}`, ""];
     if (strings[key]) {
         for (const para of clean(strings[key]).split("\n")) if (para.trim()) out.push(para.trim(), "");
     }
     if (!examples[key]) problems.push(`doc-examples.json has no example for ${key}`);
     else out.push(`## ${t.example}`, "", "```blocks", examples[key], "```", "");
-    const params = Object.keys(strings).filter((k) => k.startsWith(key + "|param|"));
-    if (params.length) {
-        out.push(`## ${t.params}`, "", `| ${t.name} | ${t.meaning} |`, "|---|---|");
-        for (const p of params) out.push(`| \`${p.split("|param|")[1]}\` | ${sentence(strings[p]).replace(/\|/g, "\\|")} |`);
+    const names = Object.keys(strings).filter((k) => k.startsWith(key + "|param|")).map((k) => k.split("|param|")[1]);
+    if (names.length) {
+        out.push(`## ${t.params}`, "");
+        if (names.length > 1) out.push(t.order, "");
+        for (const [i, n] of sortParams(names, blockText).entries()) {
+            out.push(`${names.length > 1 ? i + 1 + "." : "*"} ${sentence(strings[key + "|param|" + n])}`);
+        }
         out.push("");
     }
+    out.push(...packageFence);
     out.push("---", "", "FRANCOR e. V. · [pxt-francor-maqueen](https://github.com/franc0r/pxt-francor-maqueen)", "");
     return out.join("\n");
 }

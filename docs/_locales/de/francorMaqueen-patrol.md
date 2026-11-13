@@ -1,8 +1,8 @@
-# Linienverfolgung [on]
+# Linienverfolgung …
 
 Schaltet die Linienverfolgung der Platine an oder aus.
 
-"aus" löscht auch die Kreuzungsregeln der Platine: Nach "an" gelten wieder die Standardregeln.
+„aus“ löscht auch die Kreuzungsregeln der Platine: Nach „an“ gelten wieder die Standardregeln.
 
 ## Beispiel
 
@@ -13,9 +13,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `on` | An oder aus |
+* An oder aus
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

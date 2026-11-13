@@ -9,7 +9,7 @@
   "francorLidar.setAvoidDistance|param|mm": "distance in mm",
   "francorLidar.start": "Switches the LiDAR on. It keeps measuring in the background, your program goes on at once.\nIn the first seconds and without a sensor, the distance is 9999.",
   "francorMaqueen": "Blocks for the DFRobot Maqueen Plus V3/V2 robot.",
-  "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith both sides, gives the average.",
+  "francorMaqueen.ambientLight": "Brightness measured by the ambient light sensors.\nWith \"both\", gives the average.",
   "francorMaqueen.ambientLight|param|side": "which sensor",
   "francorMaqueen.atCrossroad": "What the robot does at a crossroad (left, right and straight).",
   "francorMaqueen.atCrossroad|param|m": "what to do",

@@ -1,4 +1,4 @@
-# an Abzweig rechts [m]
+# an Abzweig rechts …
 
 Was der Roboter macht, wo er rechts abbiegen oder geradeaus fahren kann.
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `m` | Was er tun soll |
+* Was er tun soll
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

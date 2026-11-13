@@ -1,4 +1,4 @@
-# light brightness [v]
+# light brightness …
 
 Sets how bright the lights underneath are.
 
@@ -12,9 +12,11 @@ francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.colors(francorMaq
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `v` | Brightness from 0 to 255, e.g. 128 |
+* Brightness from 0 to 255, e.g. 128
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

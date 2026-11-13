@@ -1,6 +1,6 @@
-# [j]
+# Kreuzungsart
 
-Eine Kreuzungsart zum Vergleichen mit "erkannte Kreuzung".
+Eine Kreuzungsart zum Vergleichen mit „erkannte Kreuzung“.
 
 ## Beispiel
 
@@ -15,9 +15,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `j` | Die Kreuzungsart |
+* Die Kreuzungsart
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

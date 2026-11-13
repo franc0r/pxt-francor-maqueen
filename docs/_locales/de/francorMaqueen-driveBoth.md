@@ -1,4 +1,4 @@
-# fahre [speed]%
+# fahre …%
 
 Fährt mit beiden Rädern gleich schnell. Negative Werte fahren rückwärts.
 
@@ -13,9 +13,11 @@ francorMaqueen.stop()
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `speed` | Tempo in Prozent, z. B. 50 |
+* Tempo in Prozent, z. B. 50
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

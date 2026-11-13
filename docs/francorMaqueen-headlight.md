@@ -1,4 +1,4 @@
-# headlight [side] color [color]
+# headlight … color …
 
 Sets the colour of a headlight.
 
@@ -11,10 +11,14 @@ francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `color` | The colour |
-| `side` | Which headlight |
+In the order of the gaps (…) in the block:
+
+1. Which headlight
+2. The colour
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

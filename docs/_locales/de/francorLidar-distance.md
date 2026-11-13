@@ -1,6 +1,8 @@
-# Abstand [side] (mm)
+# Abstand … (mm)
 
-Abstand zum nächsten Hindernis in mm. In den ersten Sekunden nach "LiDAR einschalten" und ohne Sensor ist der Wert 9999.
+Abstand zum nächsten Hindernis in mm.
+
+In den ersten Sekunden nach „LiDAR einschalten“ und ohne Sensor ist der Wert 9999.
 
 ## Beispiel
 
@@ -16,9 +18,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `side` | Welche Seite |
+* Welche Seite
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

@@ -1,6 +1,6 @@
-# [d]
+# Richtung (links / rechts / frei)
 
-Eine Richtung zum Vergleichen mit "Ausweichrichtung".
+Eine Richtung zum Vergleichen mit „Ausweichrichtung“.
 
 ## Beispiel
 
@@ -16,9 +16,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `d` | Die Richtung |
+* Die Richtung
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

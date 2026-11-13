@@ -1,4 +1,4 @@
-# distance [side] (mm)
+# distance … (mm)
 
 Distance to the nearest obstacle in mm.
 
@@ -18,9 +18,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `side` | Which side |
+* Which side
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

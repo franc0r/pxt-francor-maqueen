@@ -9,12 +9,17 @@ Positive = line on the left. 100 = no line seen.
 ```blocks
 francorMaqueen.start()
 basic.forever(function () {
-    if (francorMaqueen.linePosition() == 100) {
+    let lage = francorMaqueen.linePosition()
+    if (lage == 100) {
         francorMaqueen.stop()
     } else {
-        francorMaqueen.drive(40 - 20 * francorMaqueen.linePosition(), 40 + 20 * francorMaqueen.linePosition())
+        francorMaqueen.drive(40 - 20 * lage, 40 + 20 * lage)
     }
 })
+```
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
 ```
 
 ---

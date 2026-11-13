@@ -1,4 +1,4 @@
-# wheel speed [side] (cm/s)
+# wheel speed … (cm/s)
 
 Speed of a wheel in centimetres per second.
 
@@ -15,9 +15,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `side` | Which wheel |
+* Which wheel
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

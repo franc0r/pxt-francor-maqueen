@@ -18,7 +18,7 @@ namespace francorMaqueen {
 
     /**
      * Brightness measured by the ambient light sensors.
-     * With both sides, gives the average.
+     * With "both", gives the average.
      * @param side which sensor
      */
     //% blockId=francor_ambient_light block="ambient light %side"

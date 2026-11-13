@@ -1,4 +1,4 @@
-# fahre links [left]% rechts [right]% (V2)
+# fahre links …% rechts …% (V2)
 
 Fährt mit dem linken und dem rechten Rad (V2). Negative Werte fahren rückwärts.
 
@@ -11,10 +11,14 @@ francorMaqueen.driveV2(60, 40)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `left` | Tempo des linken Rads in Prozent, z. B. 50 |
-| `right` | Tempo des rechten Rads in Prozent, z. B. 50 |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Tempo des linken Rads in Prozent, z. B. 50
+2. Tempo des rechten Rads in Prozent, z. B. 50
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

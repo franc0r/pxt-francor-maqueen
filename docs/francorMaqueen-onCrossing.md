@@ -1,4 +1,4 @@
-# when crossing number $nr reached
+# when crossing number … reached
 
 Runs once when the robot reaches the crossing with this number.
 
@@ -16,10 +16,14 @@ francorMaqueen.onCrossing(1, function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `handler` | What to do |
-| `nr` | Number of the crossing, e.g. 1 |
+In the order of the gaps (…) in the block:
+
+1. Number of the crossing, e.g. 1
+2. What to do
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

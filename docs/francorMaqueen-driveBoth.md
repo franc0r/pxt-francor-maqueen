@@ -1,4 +1,4 @@
-# drive [speed]%
+# drive …%
 
 Drives both wheels at the same speed. Negative values drive backwards.
 
@@ -13,9 +13,11 @@ francorMaqueen.stop()
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `speed` | Speed in percent, e.g. 50 |
+* Speed in percent, e.g. 50
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

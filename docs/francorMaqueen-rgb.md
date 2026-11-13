@@ -1,4 +1,4 @@
-# red [r] green [g] blue [b]
+# red … green … blue …
 
 Mixes a colour from red, green and blue.
 
@@ -11,11 +11,15 @@ francorMaqueen.setLight(francorMaqueen.Led.All, francorMaqueen.rgb(255, 128, 0))
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `b` | Blue, e.g. 0 |
-| `g` | Green, e.g. 128 |
-| `r` | Red, e.g. 255 |
+In the order of the gaps (…) in the block:
+
+1. Red, e.g. 255
+2. Green, e.g. 128
+3. Blue, e.g. 0
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

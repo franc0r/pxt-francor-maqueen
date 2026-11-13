@@ -1,4 +1,4 @@
-# at T-junction [m]
+# at T-junction …
 
 What the robot does at a T-junction (left and right).
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `m` | What to do |
+* What to do
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

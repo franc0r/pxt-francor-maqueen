@@ -6,10 +6,15 @@ Wie viele Kreuzungen der Roboter bisher erkannt hat.
 
 ```blocks
 francorMaqueen.start()
+francorMaqueen.resetCrossings()
 francorMaqueen.patrol(francorMaqueen.OnOff.On)
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(francorMaqueen.crossingsCounted())
 })
+```
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
 ```
 
 ---

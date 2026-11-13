@@ -1,6 +1,6 @@
 # Ultraschall-Abstand (cm)
 
-Misst den Abstand mit dem Ultraschall-Sensor in cm (V2). Gibt 0, wenn nichts zu sehen ist.
+Misst den Abstand mit dem Ultraschall-Sensor in cm (V2). Ergibt 0, wenn nichts zu sehen ist.
 
 ## Beispiel
 
@@ -9,6 +9,10 @@ francorMaqueen.startV2()
 basic.forever(function () {
     basic.showNumber(francorMaqueen.ultrasonic())
 })
+```
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
 ```
 
 ---

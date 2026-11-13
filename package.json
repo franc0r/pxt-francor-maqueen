@@ -1,7 +1,7 @@
 {
   "name": "pxt-francor-maqueen",
   "private": true,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MakeCode extension for DFRobot Maqueen Plus V3/V2 and Matrix LiDAR",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,8 @@
     "test": "node --test test-node/",
     "check:locales": "node tools/check-locales.mjs",
     "docs": "node tools/gen-docs.mjs",
-    "check:docs": "node tools/gen-docs.mjs --check"
+    "check:docs": "node tools/gen-docs.mjs --check",
+    "check:examples": "node tools/check-examples.mjs"
   },
   "devDependencies": {
     "pxt-core": "13.2.17",

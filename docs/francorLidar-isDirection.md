@@ -1,4 +1,4 @@
-# [d]
+# Direction (left / right / free)
 
 A direction, to compare with "avoid direction".
 
@@ -16,9 +16,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `d` | The direction |
+* The direction
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

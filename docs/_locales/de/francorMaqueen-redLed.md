@@ -1,4 +1,4 @@
-# rote LED [side] [on]
+# rote LED … …
 
 Schaltet eine rote LED vorne an oder aus (V2).
 
@@ -11,10 +11,14 @@ francorMaqueen.redLed(francorMaqueen.Side.Both, francorMaqueen.OnOff.On)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `on` | An oder aus |
-| `side` | Welche LED |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Welche LED
+2. An oder aus
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

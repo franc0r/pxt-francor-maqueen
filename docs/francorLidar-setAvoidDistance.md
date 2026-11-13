@@ -1,4 +1,4 @@
-# avoid distance [mm] mm
+# avoid distance … mm
 
 Distance at which the sensor starts to suggest a direction (100 to 500 mm).
 
@@ -14,9 +14,11 @@ francorLidar.start()
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `mm` | Distance in mm |
+* Distance in mm
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

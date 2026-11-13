@@ -1,4 +1,4 @@
-# line following [on]
+# line following …
 
 Switches the board's built-in line following on or off.
 
@@ -13,9 +13,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `on` | On or off |
+* On or off
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

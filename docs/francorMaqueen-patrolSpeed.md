@@ -1,4 +1,4 @@
-# line following speed [level]
+# line following speed …
 
 Sets the speed of the built-in line following.
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `level` | Speed level from 1 (slow) to 5 (fast), e.g. 1 |
+* Speed level from 1 (slow) to 5 (fast), e.g. 1
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

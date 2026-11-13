@@ -1,4 +1,4 @@
-# an Kreuzung [m]
+# an Kreuzung …
 
 Was der Roboter an einer Kreuzung macht (links, rechts und geradeaus möglich).
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `m` | Was er tun soll |
+* Was er tun soll
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

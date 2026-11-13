@@ -1,6 +1,6 @@
-# fahre [cm] cm [dir] [wait]
+# fahre … cm … …
 
-Fährt eine genaue Strecke mit der Regelung der Platine.
+Fährt eine genaue Strecke. Die Platine regelt die Fahrt selbst.
 
 ## Beispiel
 
@@ -12,11 +12,15 @@ basic.showIcon(IconNames.Yes)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `cm` | Strecke in Zentimetern |
-| `dir` | Vorwärts oder rückwärts |
-| `wait` | Warten, bis die Fahrt fertig ist, oder sofort weitermachen |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Strecke in Zentimetern
+2. Vorwärts oder rückwärts
+3. Warten, bis die Fahrt fertig ist, oder sofort weitermachen
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

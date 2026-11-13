@@ -1,4 +1,4 @@
-# Rohwert Sensor [s]
+# Rohwert Sensor …
 
 Roher Helligkeitswert eines Liniensensors.
 
@@ -13,9 +13,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `s` | Welcher Sensor |
+* Welcher Sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

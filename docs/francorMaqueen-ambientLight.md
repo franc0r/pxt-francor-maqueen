@@ -1,8 +1,8 @@
-# ambient light [side]
+# ambient light …
 
 Brightness measured by the ambient light sensors.
 
-With both sides, gives the average.
+With "both", gives the average.
 
 ## Example
 
@@ -15,9 +15,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `side` | Which sensor |
+* Which sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

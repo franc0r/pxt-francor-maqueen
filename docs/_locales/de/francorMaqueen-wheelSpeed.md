@@ -1,6 +1,8 @@
-# Radgeschwindigkeit [side] (cm/s)
+# Radgeschwindigkeit … (cm/s)
 
-Geschwindigkeit eines Rads in Zentimetern pro Sekunde. Bei „beide“ kommt der Mittelwert.
+Geschwindigkeit eines Rads in Zentimetern pro Sekunde.
+
+Bei „beide“ kommt der Mittelwert.
 
 ## Beispiel
 
@@ -13,9 +15,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `side` | Welches Rad |
+* Welches Rad
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

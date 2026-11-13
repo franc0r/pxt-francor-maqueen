@@ -1,6 +1,8 @@
-# drehe [degrees] ° [wait]
+# drehe … ° …
 
-Dreht den Roboter auf der Stelle um einen genauen Winkel. Positive Winkel drehen im Uhrzeigersinn, negative dagegen.
+Dreht den Roboter auf der Stelle um einen genauen Winkel.
+
+Positive Winkel drehen im Uhrzeigersinn, negative gegen den Uhrzeigersinn.
 
 ## Beispiel
 
@@ -12,10 +14,14 @@ basic.showIcon(IconNames.Yes)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `degrees` | Winkel in Grad |
-| `wait` | Warten, bis die Drehung fertig ist, oder sofort weitermachen |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Winkel in Grad
+2. Warten, bis die Drehung fertig ist, oder sofort weitermachen
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

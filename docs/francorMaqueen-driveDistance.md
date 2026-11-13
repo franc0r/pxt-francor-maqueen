@@ -1,4 +1,4 @@
-# drive [cm] cm [dir] [wait]
+# drive … cm … …
 
 Drives an exact distance with the board's PID controller.
 
@@ -12,11 +12,15 @@ basic.showIcon(IconNames.Yes)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `cm` | Distance in centimetres, e.g. 20 |
-| `dir` | Forward or backward |
-| `wait` | Wait until the move is done, or continue at once |
+In the order of the gaps (…) in the block:
+
+1. Distance in centimetres, e.g. 20
+2. Forward or backward
+3. Wait until the move is done, or continue at once
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

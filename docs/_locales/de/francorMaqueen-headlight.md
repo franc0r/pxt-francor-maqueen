@@ -1,4 +1,4 @@
-# Scheinwerfer [side] Farbe [color]
+# Scheinwerfer … Farbe …
 
 Stellt die Farbe eines Scheinwerfers ein.
 
@@ -11,10 +11,14 @@ francorMaqueen.headlight(francorMaqueen.Side.Both, francorMaqueen.HeadColor.Red)
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `color` | Die Farbe |
-| `side` | Welcher Scheinwerfer |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Welcher Scheinwerfer
+2. Die Farbe
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

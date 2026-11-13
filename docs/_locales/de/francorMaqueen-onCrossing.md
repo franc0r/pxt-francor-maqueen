@@ -1,8 +1,8 @@
-# wenn Kreuzung Nummer $nr erreicht
+# wenn Kreuzung Nummer … erreicht
 
 Läuft einmal, sobald der Roboter die Kreuzung mit dieser Nummer erreicht.
 
-Gezählt wird ab dem Start (oder ab "setze Kreuzungszähler zurück").
+Gezählt wird ab dem Start (oder ab „setze Kreuzungszähler zurück“).
 
 ## Beispiel
 
@@ -16,10 +16,14 @@ francorMaqueen.onCrossing(1, function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `handler` | Was dann passiert |
-| `nr` | Nummer der Kreuzung, z. B. 1 |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Nummer der Kreuzung, z. B. 1
+2. Was dann passiert
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

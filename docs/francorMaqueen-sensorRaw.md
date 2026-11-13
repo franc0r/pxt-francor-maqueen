@@ -1,4 +1,4 @@
-# raw value sensor [s]
+# raw value sensor …
 
 Raw brightness value of a line sensor.
 
@@ -13,9 +13,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `s` | Which sensor |
+* Which sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

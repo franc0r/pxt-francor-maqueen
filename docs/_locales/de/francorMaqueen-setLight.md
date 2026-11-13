@@ -1,4 +1,4 @@
-# setze Licht [led] auf [color]=francor_colors
+# setze Licht … auf …
 
 Setzt eines der vier Lichter unten oder alle.
 
@@ -11,10 +11,14 @@ francorMaqueen.setLight(francorMaqueen.Led.One, francorMaqueen.colors(francorMaq
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `color` | Die Farbe |
-| `led` | Welches Licht |
+In der Reihenfolge der Lücken (…) im Block:
+
+1. Welches Licht
+2. Die Farbe
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

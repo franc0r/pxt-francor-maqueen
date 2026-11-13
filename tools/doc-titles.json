@@ -1,0 +1,14 @@
+{
+  "francorLidar.isDirection": {
+    "en": "Direction (left / right / free)",
+    "de": "Richtung (links / rechts / frei)"
+  },
+  "francorMaqueen.colors": {
+    "en": "Colour",
+    "de": "Farbe"
+  },
+  "francorMaqueen.isJunction": {
+    "en": "Junction type",
+    "de": "Kreuzungsart"
+  }
+}

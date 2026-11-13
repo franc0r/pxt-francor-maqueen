@@ -1,4 +1,4 @@
-# sensor [s] sees line
+# sensor … sees line
 
 True if the line sensor sees the black line.
 
@@ -17,9 +17,11 @@ basic.forever(function () {
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `s` | Which sensor |
+* Which sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

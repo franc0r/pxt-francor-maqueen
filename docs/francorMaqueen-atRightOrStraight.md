@@ -1,4 +1,4 @@
-# at right-or-straight [m]
+# at right-or-straight …
 
 What the robot does where it can turn right or go straight.
 
@@ -12,9 +12,11 @@ francorMaqueen.patrol(francorMaqueen.OnOff.On)
 
 ## Parameters
 
-| Parameter | Meaning |
-|---|---|
-| `m` | What to do |
+* What to do
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

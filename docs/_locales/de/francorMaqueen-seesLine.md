@@ -1,4 +1,4 @@
-# Sensor [s] sieht Linie
+# Sensor … sieht Linie
 
 Wahr, wenn der Liniensensor die schwarze Linie sieht.
 
@@ -17,9 +17,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `s` | Welcher Sensor |
+* Welcher Sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 

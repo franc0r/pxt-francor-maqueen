@@ -1,6 +1,8 @@
-# Umgebungslicht [side]
+# Umgebungslicht …
 
-Helligkeit der Umgebungslicht-Sensoren. Bei „beide“ kommt der Mittelwert.
+Helligkeit, die die Umgebungslicht-Sensoren messen.
+
+Bei „beide“ kommt der Mittelwert.
 
 ## Beispiel
 
@@ -13,9 +15,11 @@ basic.forever(function () {
 
 ## Parameter
 
-| Parameter | Bedeutung |
-|---|---|
-| `side` | Welcher Sensor |
+* Welcher Sensor
+
+```package
+francor-maqueen=github:franc0r/pxt-francor-maqueen#v0.1.4
+```
 
 ---
 
