@@ -9,26 +9,35 @@ Für Martin, am Roboter. Jedes Programm prüft einen Bereich. So geht's:
 Die Dateien sind keine Paketdateien (nicht in `pxt.json`). Knopfbelegung steht jeweils oben in der Datei.
 Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code werden dabei aufgelöst.
 
+## Ergebnisse (Martin, 12. bis 13.11.2026, Erweiterung v0.1.1)
+
+- **01, 02, 04, 05, 06: bestanden** (Martin: „erfolgreich“, „passt alles“, „funktioniert“; abgehakt unten).
+- **Nicht notiert, daher in den Zeilen offen:** tote Zone in Prozent (01), Rohwerte Weiß/Schwarz (02), LED-Nummern (04), Drehrichtung von `drehe 90 °` und Zeiten (05).
+- **03: teilweise.** Nur die X-Kreuzung getestet („sieht erstmal gut aus“). T-Kreuzung, Abzweig links und Abzweig rechts holt Martin nach; die Häkchen in 03 bleiben deshalb leer.
+- **07 (V2) und 08 (Stationen) und „Sprache und Offline“: noch offen.**
+- **06 gemessen:** Einschalten `ms=13`, Abfragen im Betrieb `ms=14`. Nach dem Modus liefert der Sensor erst nach etwa 2 bis 3 s Daten (zwei Abfragen und der erste Ausweich-Abstand laufen in die Zeit: `ms=512`, `1012`, `512`). Idee für v0.1.2: nach dem Setzen des Modus ca. 5 s lang Fehlschläge nicht zählen, sonst wird knapp neu eingerichtet.
+- **02 Testprogramm:** Die Schleife zeichnet nicht mehr in angezeigte Zahlen (Pixelfehler waren ein Fehler im Testprogramm).
+
 ## 01 Start und Motoren (`01-start-motoren.ts`, Roboter aufbocken)
 
-- [ ] Ohne Platine (micro:bit allein): `starte Maqueen` zeigt ein blinkendes X, endlos. → X blinkt.
-- [ ] Mit Platine: kurz X oder gleich Haken, dann geht das Programm weiter. → Haken, keine Reset-Schleife.
-- [ ] Im Simulator: X blinkt endlos. → Ja.
-- [ ] A drückt der Reihe nach 10, 20, 50, 100, −50 %. Ab wie viel Prozent dreht sich ein Rad? → Wert notieren (tote Zone). Gefunden: ____ %
-- [ ] 100 % ist deutlich schneller als 50 %; −50 % dreht rückwärts. → Ja.
-- [ ] A+B (links 50, rechts −50): Roboter dreht auf der Stelle. → Ja.
-- [ ] B stoppt beide Räder sofort. → Ja.
+- [x] Ohne Platine (micro:bit allein): `starte Maqueen` zeigt ein blinkendes X, endlos. → X blinkt.
+- [x] Mit Platine: kurz X oder gleich Haken, dann geht das Programm weiter. → Haken, keine Reset-Schleife.
+- [x] Im Simulator: X blinkt endlos. → Ja.
+- [x] A drückt der Reihe nach 10, 20, 50, 100, −50 %. Ab wie viel Prozent dreht sich ein Rad? → Wert notieren (tote Zone). Gefunden: ____ %
+- [x] 100 % ist deutlich schneller als 50 %; −50 % dreht rückwärts. → Ja.
+- [x] A+B (links 50, rechts −50): Roboter dreht auf der Stelle. → Ja.
+- [x] B stoppt beide Räder sofort. → Ja.
 
 ## 02 Linie (`02-linie.ts`, Teststreifen)
 
-- [ ] Linienlage (A) bei M allein: → 0.
-- [ ] Bei M + L1: → 0,5 (Linie leicht links, positiv).
-- [ ] Bei L2 allein: → 2. Bei R2 allein: → −2.
-- [ ] Keine Linie (Roboter neben den Streifen): → 100.
-- [ ] Mittelpunkt im Display (Sensor M) leuchtet nur auf der Linie. → Ja.
-- [ ] B (`fahre 40 − 20 × Linienlage …`), Roboter schräg zur Linie: lenkt er zur Linie hin? → Ja. Sonst Vorzeichen falsch! Gefunden: ____
-- [ ] Linie verloren (100), während B lenkt: Roboter hält an. → Ja.
-- [ ] A+B: Rohwerte M, L1, R1 nacheinander. Weiß ≈ 3800, Schwarz ≈ 2700? → Werte: ____
+- [x] Linienlage (A) bei M allein: → 0.
+- [x] Bei M + L1: → 0,5 (Linie leicht links, positiv).
+- [x] Bei L2 allein: → 2. Bei R2 allein: → −2.
+- [x] Keine Linie (Roboter neben den Streifen): → 100.
+- [x] Mittelpunkt im Display (Sensor M) leuchtet nur auf der Linie. → Ja.
+- [x] B (`fahre 40 − 20 × Linienlage …`), Roboter schräg zur Linie: lenkt er zur Linie hin? → Ja. Sonst Vorzeichen falsch! Gefunden: ____
+- [x] Linie verloren (100), während B lenkt: Roboter hält an. → Ja.
+- [x] A+B: Rohwerte M, L1, R1 nacheinander. Weiß ≈ 3800, Schwarz ≈ 2700? → Werte: ____
 
 ## 03 Platine: Linienverfolgung und Kreuzungen (`03-platine-kreuzungen.ts`, Grand-Prix-Matte)
 
@@ -47,39 +56,39 @@ Die Funde fließen danach als v0.1.x ein; die `// VORLÄUFIG`-Marken im Code wer
 
 ## 04 Lichter (`04-lichter.ts`)
 
-- [ ] A: LED 1 bis 4 einzeln rot. Welche Nummer ist welche LED? → vorn links ____ , vorn rechts ____ , hinten links ____ , hinten rechts ____
-- [ ] B: alle Farben nacheinander (rot, orange, gelb, grün, blau, indigo, violett, lila, weiß). → Farben stimmen. Wenn nicht: Reihenfolge (GRB) notieren.
-- [ ] Helligkeit 20 ist merklich dunkler als 255. → Ja.
-- [ ] A+B: Scheinwerfer links/rechts in allen Farben (rot, grün, gelb, blau, lila, cyan, weiß), dann aus. → Farben stimmen, links und rechts nicht vertauscht.
-- [ ] Logo: Scheinwerfer rot, Lichter unten grün; nach 1 s macht `alle Lichter aus` alles aus, auch die Scheinwerfer. → Ja.
-- [ ] Neuer Scheinwerfer-Block aus der Liste gezogen: steht auf „beide“ und „rot“. → Ja.
-- [ ] Lichter ohne `starte Maqueen`: Zuerst die Zeile `francorMaqueen.start()` in `04-lichter.ts` löschen, dann flashen. Die Lichter gehen an (V3-Pin P1). → Ja.
+- [x] A: LED 1 bis 4 einzeln rot. Welche Nummer ist welche LED? → vorn links ____ , vorn rechts ____ , hinten links ____ , hinten rechts ____
+- [x] B: alle Farben nacheinander (rot, orange, gelb, grün, blau, indigo, violett, lila, weiß). → Farben stimmen. Wenn nicht: Reihenfolge (GRB) notieren.
+- [x] Helligkeit 20 ist merklich dunkler als 255. → Ja.
+- [x] A+B: Scheinwerfer links/rechts in allen Farben (rot, grün, gelb, blau, lila, cyan, weiß), dann aus. → Farben stimmen, links und rechts nicht vertauscht.
+- [x] Logo: Scheinwerfer rot, Lichter unten grün; nach 1 s macht `alle Lichter aus` alles aus, auch die Scheinwerfer. → Ja.
+- [x] Neuer Scheinwerfer-Block aus der Liste gezogen: steht auf „beide“ und „rot“. → Ja.
+- [x] Lichter ohne `starte Maqueen`: Zuerst die Zeile `francorMaqueen.start()` in `04-lichter.ts` löschen, dann flashen. Die Lichter gehen an (V3-Pin P1). → Ja.
 
 ## 05 PID-Fahrt (`05-pid.ts`, Platz frei)
 
-- [ ] A: `fahre 20 cm vorwärts, warte bis fertig`: Roboter steht, wenn die Zahl erscheint. → Ja. Zeit in ms: ____
-- [ ] B: `rückwärts, sofort weiter`: Das Herz erscheint sofort, während er noch fährt. → Ja.
-- [ ] A+B: `drehe 90 °`: dreht er nach links oder rechts? → Gefunden: ____ (angenommen: rechts, Uhrzeigersinn). `drehe −90 °` dreht zurück.
-- [ ] Der Folgeblock startet erst nach der Fahrt (Drehung beginnt erst, wenn die Fahrt zu Ende ist). → Ja.
-- [ ] Logo: `fahre 0 cm … warte bis fertig` und `drehe 0 ° … warte bis fertig` kehren zurück, ohne zu hängen. → Zeit ca. 500 ms (wartet auf das Busy-Flag, das nie 1 wird). Zeit: ____ ms
-- [ ] PID-Block „warte bis fertig“ ohne Roboter-Blöcke davor (nur `starte Maqueen`, Räder aufgebockt): kehrt nach ca. 500 ms zurück. → Ja.
-- [ ] `stoppe Fahrbefehl` bricht eine laufende Fahrt ab. → Ja.
+- [x] A: `fahre 20 cm vorwärts, warte bis fertig`: Roboter steht, wenn die Zahl erscheint. → Ja. Zeit in ms: ____
+- [x] B: `rückwärts, sofort weiter`: Das Herz erscheint sofort, während er noch fährt. → Ja.
+- [x] A+B: `drehe 90 °`: dreht er nach links oder rechts? → Gefunden: ____ (angenommen: rechts, Uhrzeigersinn). `drehe −90 °` dreht zurück.
+- [x] Der Folgeblock startet erst nach der Fahrt (Drehung beginnt erst, wenn die Fahrt zu Ende ist). → Ja.
+- [x] Logo: `fahre 0 cm … warte bis fertig` und `drehe 0 ° … warte bis fertig` kehren zurück, ohne zu hängen. → Zeit ca. 500 ms (wartet auf das Busy-Flag, das nie 1 wird). Zeit: ____ ms
+- [x] PID-Block „warte bis fertig“ ohne Roboter-Blöcke davor (nur `starte Maqueen`, Räder aufgebockt): kehrt nach ca. 500 ms zurück. → Ja.
+- [x] `stoppe Fahrbefehl` bricht eine laufende Fahrt ab. → Ja.
 
 ## 06 LiDAR (`06-lidar.ts`)
 
-- [ ] Der Sensor ist auf I2C-Adresse 0x33 gestellt (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“. → Ja.
-- [ ] Ohne `LiDAR einschalten`: A zeigt 9999. → Ja.
-- [ ] B (einschalten): A direkt danach zeigt noch 9999; nach ca. 3 s echte Werte. → Ja.
-- [ ] Serielle Konsole (Gerät) nach dem Einschalten: `inits=1`, `fails=0`. Wie lange dauert eine Anfrage? → `ms=` ____ (Grenze: 500 ms je Abfrage, 2000 ms fürs Einschalten).
-- [ ] Neu einrichten: micro:bit bleibt am USB, Roboter aus- und wieder einschalten. Nach ein paar Sekunden kommen wieder echte Werte, `inits` ist um 1 gestiegen. → Ja. Dauer bis zu echten Werten: ____ s
-- [ ] Roboter erst einschalten, nachdem der micro:bit schon läuft (Ablauf wie in Station 3): Der LiDAR liefert danach echte Werte. → Ja.
-- [ ] Hand vor den Sensor (ca. 10 cm): vorne < 200, Logo-Taste zeigt das Herz. → Ja.
-- [ ] Hand weg: Wert steigt wieder, Logo zeigt das Kreuz. → Ja.
-- [ ] A+B: links, rechts und Richtung (1 links, 2 rechts, 3 frei) sinnvoll. → Ja.
-- [ ] Sensor abgesteckt, LiDAR eingeschaltet: kein Hängen, Abstand 9999, Richtung frei (3), nie < 200. → Ja.
-- [ ] Sensor im laufenden Betrieb abziehen: Abstand springt auf 9999, nie auf 0 oder < 200 (kein Fehlstopp). Wieder anstecken: echte Werte kommen zurück. → Ja.
-- [ ] Kein Verhungern: Der Punkt im `dauerhaft` läuft flüssig über die oberste Reihe, auch mit eingeschaltetem LiDAR ohne Sensor. → Ja.
-- [ ] Roboter ohne LiDAR, nur Linienprogramm (Station 3, ohne `LiDAR einschalten`): läuft flüssig. → Ja.
+- [x] Der Sensor ist auf I2C-Adresse 0x33 gestellt (DIP-Schalter, wie beim Maqueen V3 geliefert); sonst liest er für immer 9999, wie „kein Sensor“. → Ja.
+- [x] Ohne `LiDAR einschalten`: A zeigt 9999. → Ja.
+- [x] B (einschalten): A direkt danach zeigt noch 9999; nach ca. 3 s echte Werte. → Ja.
+- [x] Serielle Konsole (Gerät) nach dem Einschalten: `inits=1`, `fails=0`. Wie lange dauert eine Anfrage? → `ms=` ____ (Grenze: 500 ms je Abfrage, 2000 ms fürs Einschalten).
+- [x] Neu einrichten: micro:bit bleibt am USB, Roboter aus- und wieder einschalten. Nach ein paar Sekunden kommen wieder echte Werte, `inits` ist um 1 gestiegen. → Ja. Dauer bis zu echten Werten: ____ s
+- [x] Roboter erst einschalten, nachdem der micro:bit schon läuft (Ablauf wie in Station 3): Der LiDAR liefert danach echte Werte. → Ja.
+- [x] Hand vor den Sensor (ca. 10 cm): vorne < 200, Logo-Taste zeigt das Herz. → Ja.
+- [x] Hand weg: Wert steigt wieder, Logo zeigt das Kreuz. → Ja.
+- [x] A+B: links, rechts und Richtung (1 links, 2 rechts, 3 frei) sinnvoll. → Ja.
+- [x] Sensor abgesteckt, LiDAR eingeschaltet: kein Hängen, Abstand 9999, Richtung frei (3), nie < 200. → Ja.
+- [x] Sensor im laufenden Betrieb abziehen: Abstand springt auf 9999, nie auf 0 oder < 200 (kein Fehlstopp). Wieder anstecken: echte Werte kommen zurück. → Ja.
+- [x] Kein Verhungern: Der Punkt im `dauerhaft` läuft flüssig über die oberste Reihe, auch mit eingeschaltetem LiDAR ohne Sensor. → Ja.
+- [x] Roboter ohne LiDAR, nur Linienprogramm (Station 3, ohne `LiDAR einschalten`): läuft flüssig. → Ja.
 
 ## 07 V2 (`07-v2.ts`, nur mit V2-Roboter)
 
